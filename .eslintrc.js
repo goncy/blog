@@ -6,6 +6,9 @@ module.exports = {
     browser: true,
   },
   extends: ['xo-space/esnext', 'xo-react/space', 'xo-typescript'],
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   rules: {
     'object-curly-spacing': ['error', 'always'],
     '@typescript-eslint/indent': ['error', 2, { SwitchCase: 1 }],
