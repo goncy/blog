@@ -11,6 +11,7 @@ export interface PaginationProps {
 }
 
 const navCss = css`
+  margin-bottom: 20px;
   text-align: center;
   div {
     display: inline-block;
@@ -52,6 +53,10 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({ currentPage, num
   const isLast = currentPage === numPages;
   const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString();
   const nextPage = (currentPage + 1).toString();
+
+  if (numPages === 1) {
+    return null;
+  }
 
   return (
     <nav css={navCss}>

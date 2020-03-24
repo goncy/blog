@@ -1,3 +1,6 @@
-- id: speeches
-  description: Some of the greatest words ever spoken.
-  image: img/speeches-cover.jpg
+- id: Functional Programming
+  description: Trying to fix things before they are broken.
+  image: img/blog-cover.jpg
+- id: Español
+  description: Devolviendo un poco a los que entienden mis insultos
+  image: img/blog-cover.jpg

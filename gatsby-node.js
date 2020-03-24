@@ -19,14 +19,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         slug = `/${relativePath.replace('.md', '')}/`;
       }
 
-      // Used to generate URL to view this content.
       createNodeField({
         node,
         name: 'slug',
         value: slug || '',
       });
 
-      // Used to determine a page layout.
       createNodeField({
         node,
         name: 'layout',
@@ -43,7 +41,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     default:
-      console.log('Source not found');
       break;
   }
 };

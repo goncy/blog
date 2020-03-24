@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Full and Comprehensive Style Test
-image: img/testimg-cover.jpg
+image: img/blog-cover.jpg
 author: goncy
 date: 2018-09-30T07:03:47.149Z
 tags: 

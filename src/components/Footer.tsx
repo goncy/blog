@@ -10,8 +10,7 @@ import config from '../website-config';
 
 const SiteFooter = css`
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 60px;
+  padding: 20px;
   color: #fff;
   background: ${setLightness('0.0015', colors.darkgrey)};
 `;
@@ -82,6 +81,11 @@ const Footer: React.FC = () => {
           {config.facebook && (
             <a href={config.facebook} target="_blank" rel="noopener noreferrer">
               Facebook
+            </a>
+          )}
+          {config.github && (
+            <a href={config.github} target="_blank" rel="noopener noreferrer">
+              Github
             </a>
           )}
           {config.twitter && (
