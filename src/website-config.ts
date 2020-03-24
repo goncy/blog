@@ -55,8 +55,8 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'Gonzalo Pozzo',
   description: 'Personal thoughts',
-  coverImage: 'img/blog-cover.jpg',
-  logo: 'img/logo.png',
+  coverImage: 'meta/img/blog-cover.jpg',
+  logo: 'meta/img/logo.png',
   lang: 'en',
   siteUrl: 'http://gonzalopozzo.com',
   twitter: 'https://twitter.com/goncy',

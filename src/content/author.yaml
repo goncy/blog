@@ -1,8 +1,8 @@
 - id: goncy
-  avatar: avatars/goncy.png
+  avatar: meta/avatars/goncy.png
   bio: Frontend Developer @ Tradehelm
   twitter: goncy
-  facebook: goncy.pozzo
+  github: goncy
   website: https://gonzalopozzo.com/
   location: Quilmes
-  profile_image: img/profile-cover.jpg
+  profile_image: meta/img/profile-cover.jpg

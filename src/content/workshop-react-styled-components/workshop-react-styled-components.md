@@ -7,8 +7,8 @@ permalink: workshop-react-styled-components
 date: 2020-03-23T07:03:47.149Z
 draft: false
 tags: 
+  - Workshop
   - Español
-  - Lessons
   - React
   - Styled Components
 ---

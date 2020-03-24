@@ -12,6 +12,7 @@ import {
   AuthorProfileImage,
   inner,
   outer,
+  Backdrop,
   PostFeed,
   PostFeedRaise,
   SiteHeader,
@@ -21,9 +22,10 @@ import {
   SocialLink,
 } from '../styles/shared';
 import { PageContext } from './post';
-import Facebook from '../components/icons/facebook';
 import Helmet from 'react-helmet';
 import config from '../website-config';
+import Github from '../components/icons/github';
+import Facebook from '../components/icons/facebook';
 import Website from '../components/icons/website';
 import Twitter from '../components/icons/twitter';
 
@@ -95,6 +97,7 @@ interface AuthorTemplateProps {
       website?: string;
       twitter?: string;
       facebook?: string;
+      github?: string;
       location?: string;
       // eslint-disable-next-line @typescript-eslint/camelcase
       profile_image?: {
@@ -114,6 +117,8 @@ interface AuthorTemplateProps {
 
 const Author: React.FC<AuthorTemplateProps> = props => {
   const author = props.data.authorYaml;
+
+  console.log(author)
 
   const edges = props.data.allMarkdownRemark.edges.filter(
     edge => {
@@ -136,8 +141,8 @@ const Author: React.FC<AuthorTemplateProps> = props => {
         <meta property="og:type" content="profile" />
         <meta property="og:title" content={`${author.id} - ${config.title}`} />
         <meta property="og:url" content={config.siteUrl + props.pathContext.slug} />
-        <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-        <meta property="article:author" content="https://www.facebook.com/ghost" />
+        <meta property="article:publisher" content={author.website} />
+        <meta property="article:author" content={author.website} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={`${author.id} - ${config.title}`} />
         <meta name="twitter:url" content={config.siteUrl + props.pathContext.slug} />
@@ -165,6 +170,7 @@ const Author: React.FC<AuthorTemplateProps> = props => {
               '',
           }}
         >
+          <Backdrop opacity={0.7} />
           <div css={inner}>
             <SiteNav isHome={false} />
             <SiteHeaderContent>
@@ -224,6 +230,18 @@ const Author: React.FC<AuthorTemplateProps> = props => {
                     <Facebook />
                   </a>
                 )}
+                {author.github && (
+                  <a
+                    className="social-link-github"
+                    css={SocialLink}
+                    href={`https://www.github.com/${author.github}`}
+                    title="Github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github />
+                  </a>
+                )}
                 {/* TODO: RSS for author */}
                 {/* <a
                   css={SocialLink} className="social-link-rss"
@@ -269,6 +287,7 @@ export const pageQuery = graphql`
       twitter
       bio
       facebook
+      github
       location
       profile_image {
         childImageSharp {

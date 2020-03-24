@@ -7,9 +7,9 @@ permalink: intro-a-ramda
 date: 2020-03-23T07:03:47.149Z
 draft: false
 tags: 
-  - Español
+  - Lesson
   - Functional Programming
-  - Lessons
+  - Español
   - Ramda
 ---
 

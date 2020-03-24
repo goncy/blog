@@ -1,6 +1,15 @@
 - id: Functional Programming
   description: Trying to fix things before they are broken.
-  image: img/blog-cover.jpg
+  image: meta/img/blog-cover.jpg
 - id: Español
   description: Devolviendo un poco a los que entienden mis insultos
-  image: img/blog-cover.jpg
+  image: meta/img/blog-cover.jpg
+- id: Lessons
+  description: Get started really quick.
+  image: meta/img/blog-cover.jpg
+- id: Testing
+  description: Save yourself from your future self.
+  image: meta/img/blog-cover.jpg
+- id: Workshop
+  description: Lets get our hands dirty.
+  image: meta/img/blog-cover.jpg
