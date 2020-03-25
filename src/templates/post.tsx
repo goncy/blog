@@ -287,7 +287,7 @@ const PageTemplate: React.FC<PageTemplateProps> = (props) => {
                   <Img
                     fluid={post.frontmatter.image.childImageSharp.fluid}
                     imgStyle={{objectFit: "contain"}}
-                    placeholderStyle={{objectFit: "cover", opacity: 1}}
+                    placeholderStyle={{objectFit: "cover", opacity: 1, filter: "blur(15px)"}}
                     style={{height: "100%"}}
                   />
                 </PostFullImage>

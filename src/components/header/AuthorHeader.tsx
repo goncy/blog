@@ -1,7 +1,6 @@
-import { graphql } from "gatsby";
 import React from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import {css} from "@emotion/core";
 
 import {
   AuthorProfileImage,
@@ -13,7 +12,6 @@ import {
   SiteTitle,
   SocialLink,
 } from "../../styles/shared";
-
 import Github from "../icons/github";
 import Facebook from "../icons/facebook";
 import Website from "../icons/website";
@@ -83,10 +81,10 @@ interface AuthorHeaderProps {
         fluid: any;
       };
     };
-  }
+  };
 }
 
-const AuthorHeader: React.FC<AuthorHeaderProps> = ({ author }) => {
+const AuthorHeader: React.FC<AuthorHeaderProps> = ({author}) => {
   return (
     <header
       className="no-cover"
@@ -169,4 +167,3 @@ const AuthorHeader: React.FC<AuthorHeaderProps> = ({ author }) => {
 };
 
 export default AuthorHeader;
-

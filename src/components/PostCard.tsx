@@ -208,9 +208,9 @@ const PostCard: React.FC<PostCardProps> = ({post}) => {
                 <Img
                   alt={`${post.frontmatter.title} cover image`}
                   fluid={post.frontmatter.image.childImageSharp.fluid}
-                  style={{height: "100%"}}
                   imgStyle={{objectFit: "contain"}}
-                  placeholderStyle={{objectFit: "cover", opacity: 1}}
+                  placeholderStyle={{objectFit: "cover", opacity: 1, filter: "blur(15px)"}}
+                  style={{height: "100%"}}
                 />
               )}
           </PostCardImage>
