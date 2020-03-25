@@ -62,7 +62,7 @@ const config: WebsiteConfig = {
   coverImage: "meta/img/blog-cover.jpg",
   logo: "meta/img/logo.png",
   lang: "en",
-  siteUrl: "http://gonzalopozzo.com",
+  siteUrl: "https://goncy.netlify.com",
   twitter: "https://twitter.com/goncy",
   github: "https://github.com/goncy",
   twitch: "https://www.twitch.tv/goncypozzo",

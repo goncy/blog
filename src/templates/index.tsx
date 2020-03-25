@@ -118,7 +118,7 @@ const IndexPage: React.FC<IndexProps> = (props) => {
         <html lang={config.lang} />
         <title>{config.title}</title>
         <meta content={config.description} name="description" />
-        <meta content={config.title} property="og:site_name" />
+        <meta content={config.siteUrl} property="og:site_name" />
         <meta content="website" property="og:type" />
         <meta content={config.title} property="og:title" />
         <meta content={config.description} property="og:description" />
