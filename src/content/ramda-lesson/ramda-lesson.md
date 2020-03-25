@@ -6,11 +6,11 @@ author: goncy
 permalink: intro-a-ramda
 date: 2020-03-23T07:03:47.149Z
 draft: false
-tags: 
-  - Lesson
+tags:
   - Functional Programming
-  - Español
   - Ramda
+  - Lesson
+  - Español
 ---
 
 > Cuando tenemos que actualizar objetos anidados, armar estructuras complejas o patrones que se vuelven recurrentes, es posible que haya una herramienta que nos simplifique esos procesos de una manera óptima y sin repetirnos a nosotros mismos, hoy vamos a ver una de mis favoritas, Ramda.

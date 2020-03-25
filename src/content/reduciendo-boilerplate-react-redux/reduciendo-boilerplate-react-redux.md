@@ -6,10 +6,10 @@ author: goncy
 permalink: reduciendo-boilerplate-react-redux
 date: 2020-03-23T07:03:47.149Z
 draft: false
-tags: 
-  - Patterns
-  - React
+tags:
   - Redux
+  - React
+  - Patterns
   - Webpack
   - Español
 ---
@@ -72,7 +72,7 @@ Por ahora nuestros archivos van a quedar vacíos pero ya vamos a ir a eso más a
 Vamos a instalar las dependencias necesarias:
 
 ```bash
-yarn add redux react-redux 
+yarn add redux react-redux
 ```
 
 Creamos una carpeta db dentro de src, con los archivos reducers.js (nuestro root reducer), store.js (la configuración de redux), utils.js (una utilidad que vamos a ver en un rato).
