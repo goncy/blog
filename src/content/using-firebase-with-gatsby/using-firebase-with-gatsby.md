@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Using Firbase with Gatsby
+title: Using Firebase with Gatsby
 image: assets/cover.jpg
 author: goncy
 permalink: using-firebase-with-gatsby
 date: 2020-03-23T07:03:47.149Z
 draft: false
-tags: 
+tags:
   - Firebase
   - Tips
   - React
