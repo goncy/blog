@@ -60,10 +60,12 @@ const PostFullMeta = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: ${colors.midgrey};
   font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;
+  margin-top: 2.5em;
 
   @media (max-width: 500px) {
     font-size: 1.2rem;
@@ -73,6 +75,10 @@ const PostFullMeta = styled.section`
 
 const PostFullMetaDate = styled.time`
   color: ${colors.blue};
+`;
+
+const PostFullMetaTags = styled.div`
+  margin-top: 0.5em;
 `;
 
 export const PostFullTitle = styled.h1`
@@ -105,9 +111,10 @@ const PostFullImage = styled.figure`
   }
 `;
 
-const DateDivider = styled.span`
-  display: inline-block;
-  margin: 0 6px 1px;
+const PostFullMetaTag = styled(Link)`
+  &:not(:first-child) {
+    margin-left: 1em;
+  }
 `;
 
 const ReadNextFeed = styled.div`
@@ -269,21 +276,20 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
             {/* TODO: no-image css tag? */}
             <article css={[PostFull, !post.frontmatter.image && NoImage]}>
               <PostFullHeader>
+                <PostFullTitle>{post.frontmatter.title}</PostFullTitle>
                 <PostFullMeta>
                   <PostFullMetaDate dateTime={post.frontmatter.date}>
                     {post.frontmatter.userDate}
                   </PostFullMetaDate>
-                  {post.frontmatter.tags &&
-                    post.frontmatter.tags.length > 0 && (
-                      <>
-                        <DateDivider>/</DateDivider>
-                        <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
-                          {post.frontmatter.tags[0]}
-                        </Link>
-                      </>
-                  )}
+                  <PostFullMetaTags>
+                    {post.frontmatter.tags &&
+                      post.frontmatter.tags.length > 0 && post.frontmatter.tags.map(tag => (
+                        <PostFullMetaTag to={`/tags/${_.kebabCase(tag)}/`}>
+                          {tag}
+                        </PostFullMetaTag>
+                      ))}
+                  </PostFullMetaTags>
                 </PostFullMeta>
-                <PostFullTitle>{post.frontmatter.title}</PostFullTitle>
               </PostFullHeader>
 
               {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (

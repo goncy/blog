@@ -8,7 +8,7 @@ date: 2020-03-23T07:03:47.149Z
 draft: false
 tags: 
   - Testing
-  - Lessons
+  - Lesson
   - Cypress
 ---
 
@@ -29,18 +29,10 @@ Well, is really simple to use and it let me do something that i always tried to 
 ## Let's get this party started!
 
 ### 🤓 Creating our project
-For this project we will use React, so we will use [Create react app](https://github.com/facebook/create-react-app), if you don't have it installed, go to the terminal and run:
+For this project we will use React, so we will use [Create react app](https://github.com/facebook/create-react-app):
 
 ```bash
-npm install -g create-react-app
-```
-
-> ![03](./assets/cra-install.gif)
-
-Once it finished, run:
-
-```bash
-create-react-app mood-of-the-day # Or whatever you want to use as name
+yarn create react-app mood-of-the-day
 ```
 
 > ![04](./assets/cra-create.png)
@@ -51,7 +43,7 @@ This will install all the necessary dependencies for our project, now open the n
 Once that we already have our project created and opened, we will install Cypress, so, go to the terminal again (ensure that we are on the project directory) and run:
 
 ```bash
-npm install cypress --save-dev
+yarn add cypress --dev
 ```
 
 This will install Cypress as a dev dependency, this will take a while because it have to download the Cypress binary, meanwhile, we will continue with the other steps.

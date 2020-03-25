@@ -118,8 +118,6 @@ interface AuthorTemplateProps {
 const Author: React.FC<AuthorTemplateProps> = props => {
   const author = props.data.authorYaml;
 
-  console.log(author)
-
   const edges = props.data.allMarkdownRemark.edges.filter(
     edge => {
       const isDraft = (edge.node.frontmatter.draft !== true ||
@@ -286,7 +284,6 @@ export const pageQuery = graphql`
       website
       twitter
       bio
-      facebook
       github
       location
       profile_image {

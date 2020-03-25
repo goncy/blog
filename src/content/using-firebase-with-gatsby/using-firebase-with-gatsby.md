@@ -7,10 +7,10 @@ permalink: using-firebase-with-gatsby
 date: 2020-03-23T07:03:47.149Z
 draft: false
 tags: 
+  - Firebase
   - Tips
   - React
   - Gatsby
-  - Firebase
 ---
 
 I struggled a lot with this because you don't have the window object when trying to initialize firebase, so every post I found in how to solve it propones to create a method to check if it was initialized and save the instance to a variable.

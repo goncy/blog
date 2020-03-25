@@ -108,8 +108,9 @@ export const PostFullContent = styled.section`
   img,
   video {
     display: block;
-    margin: 1.5em auto;
+    margin: auto;
     max-width: 1040px;
+    width: 100%;
     height: auto;
   }
 
@@ -134,7 +135,7 @@ export const PostFullContent = styled.section`
 
   /* Override third party iframe styles */
   iframe {
-    margin: 0 auto !important;
+    margin: 0 auto 1.5em 0 !important;
   }
 
   blockquote {
@@ -230,7 +231,7 @@ export const PostFullContent = styled.section`
   }
 
   h1 {
-    margin: 0.5em 0 0.2em 0;
+    margin: 0 0 0.5em 0;
     font-size: 4.6rem;
     font-weight: 700;
   }
@@ -241,7 +242,7 @@ export const PostFullContent = styled.section`
   }
 
   h2 {
-    margin: 0.5em 0 0.2em 0;
+    margin: 0 0 0.5em 0;
     font-size: 3.6rem;
     font-weight: 700;
   }
@@ -252,7 +253,7 @@ export const PostFullContent = styled.section`
   }
 
   h3 {
-    margin: 0.5em 0 0.2em 0;
+    margin: 0 0 0.5em 0;
     font-size: 2.8rem;
     font-weight: 700;
   }
@@ -263,7 +264,7 @@ export const PostFullContent = styled.section`
   }
 
   h4 {
-    margin: 0.5em 0 0.2em 0;
+    margin: 0 0 0.5em 0;
     font-size: 2.8rem;
     font-weight: 700;
   }
@@ -275,7 +276,7 @@ export const PostFullContent = styled.section`
 
   h5 {
     display: block;
-    margin: 0.5em 0;
+    margin: 0 0 0.5em 0;
     padding: 1em 0 1.5em;
     border: 0;
     color: ${colors.blue};
@@ -297,7 +298,7 @@ export const PostFullContent = styled.section`
   }
 
   h6 {
-    margin: 0.5em 0 0.2em 0;
+    margin: 0 0 0.5em 0;
     font-size: 2.3rem;
     font-weight: 700;
   }
@@ -522,7 +523,7 @@ export const PostFullContent = styled.section`
   }
 
   .gatsby-highlight {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5em;
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
     border-radius: 10px;

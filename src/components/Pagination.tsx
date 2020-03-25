@@ -11,7 +11,7 @@ export interface PaginationProps {
 }
 
 const navCss = css`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
   div {
     display: inline-block;

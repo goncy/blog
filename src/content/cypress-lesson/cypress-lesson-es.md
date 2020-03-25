@@ -9,7 +9,7 @@ draft: false
 tags: 
   - Testing
   - Español
-  - Lessons
+  - Lesson
   - Cypress
 ---
 
@@ -30,18 +30,10 @@ Bueno, además de ser muy simple de usar me permitió hacer de forma fácil algo
 ## Vamos a empezar!
 
 ### 🤓 Creando nuestro proyecto
-Para este ejemplo vamos a usar React, para eso vamos a ayudarnos con [Create react app](https://github.com/facebook/create-react-app), si no la tenés instalada, andá a la terminal y ejecutá:
+Para este ejemplo vamos a usar React, para eso vamos a ayudarnos con [Create react app](https://github.com/facebook/create-react-app):
 
 ```bash
-npm install -g create-react-app
-```
-
-> ![03](./assets/cra-install.gif)
-
-Una vez que ya terminó de instalar, volvé a la terminal y ejecutá:
-
-```bash
-create-react-app humor-del-dia # O el nombre que quieras para tu proyecto
+yarn create react-app humor-del-dia
 ```
 
 > ![04](./assets/cra-create.png)
@@ -52,7 +44,7 @@ Esto va a instalar todas las dependencias que nuestro proyecto necesita, mientra
 Una vez que tenemos nuestro proyecto creado y abierto, vamos a instalar Cypress, para eso, dirigite a la consola (asegurate de estar dentro del directorio del proyecto) y ejecutá:
 
 ```bash
-npm install cypress --save-dev
+yarn add cypress --dev
 ```
 
 Eso va a instalar Cypress como una dependencia de desarrollo, esto va a tardar un rato ya que tiene que bajar el binario. Mientras tanto seguimos con los otros pasos.
