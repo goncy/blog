@@ -76,6 +76,7 @@ const Tags: React.FC<TagTemplateProps> = (props) => {
         {config.twitter && <meta content={`@${config.twitter.split("https://twitter.com/")[1]}`} name="twitter:site" />}
       </Helmet>
       <Wrapper>
+        <SiteNav isHome={false} />
         <header
           className={`${tagData && tagData.node.image ? "" : "no-cover"}`}
           css={[outer, SiteHeader]}
@@ -85,7 +86,6 @@ const Tags: React.FC<TagTemplateProps> = (props) => {
           }}
         >
           <div css={inner}>
-            <SiteNav isHome={false} />
             <SiteHeaderContent>
               <SiteTitle>{tag}</SiteTitle>
               <SiteDescription>

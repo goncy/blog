@@ -1,17 +1,15 @@
-// tslint:disable:no-http-string
-import { Link } from "gatsby";
+import {Link} from "gatsby";
 import * as React from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import {css} from "@emotion/core";
 
-import { SocialLink } from "../../styles/shared";
+import {SocialLink} from "../../styles/shared";
 import config from "../../website-config";
 import Facebook from "../icons/facebook";
 import Twitter from "../icons/twitter";
 import Github from "../icons/github";
 import SubscribeModal from "../subscribe/SubscribeOverlay";
-
-import { outer, inner, SiteHeader } from "../../styles/shared"
+import {outer, inner, SiteHeader} from "../../styles/shared";
 
 import SiteNavLogo from "./SiteNavLogo";
 
@@ -31,7 +29,6 @@ const SiteNavStyles = css`
   overflow-y: hidden;
   height: 40px;
   font-size: 1.2rem;
-  background: rgba(0, 0, 0, 0.75);
   border-radius: 4px;
 `;
 
@@ -133,7 +130,7 @@ class SiteNav extends React.Component<SiteNavProps> {
   };
 
   render() {
-    const { isHome = false } = this.props;
+    const {isHome = false} = this.props;
 
     return (
       <div css={[outer, SiteHeader]}>
