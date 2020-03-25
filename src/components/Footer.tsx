@@ -83,17 +83,16 @@ const Footer: React.FC = () => {
               Facebook
             </a>
           )}
-          {config.github && (
-            <a href={config.github} rel="noopener noreferrer" target="_blank">
-              Github
-            </a>
-          )}
           {config.twitter && (
             <a href={config.twitter} rel="noopener noreferrer" target="_blank">
               Twitter
             </a>
           )}
-
+          {config.github && (
+            <a href={config.github} rel="noopener noreferrer" target="_blank">
+              Github
+            </a>
+          )}
           <a href="/rss.xml">RSS</a>
         </SiteFooterNav>
       </div>

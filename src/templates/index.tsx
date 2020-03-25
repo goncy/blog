@@ -4,9 +4,9 @@ import {css} from "@emotion/core";
 import Helmet from "react-helmet";
 
 import Footer from "../components/Footer";
-import SiteNav from "../components/header/SiteNav";
 import PostCard from "../components/PostCard";
 import Wrapper from "../components/Wrapper";
+import SiteNav from "../components/header/SiteNav";
 import IndexLayout from "../layouts";
 import config from "../website-config";
 import Pagination from "../components/Pagination";
@@ -15,12 +15,11 @@ import {
   outer,
   PostFeed,
   PostFeedRaise,
-  SiteDescription,
-  SiteHeader,
-  SiteHeaderContent,
   SiteMain,
-  SiteTitle,
+  SiteHeader
 } from "../styles/shared";
+
+import AuthorHeader from "../components/header/AuthorHeader";
 
 import {PageContext} from "./post";
 
@@ -87,6 +86,25 @@ export interface IndexProps {
         node: PageContext;
       }>;
     };
+    authorYaml: {
+      id: string;
+      website?: string;
+      twitter?: string;
+      facebook?: string;
+      github?: string;
+      location?: string;
+      profile_image?: {
+        childImageSharp: {
+          fluid: any;
+        };
+      };
+      bio?: string;
+      avatar: {
+        childImageSharp: {
+          fluid: any;
+        };
+      };
+    }
   };
 }
 
@@ -120,26 +138,8 @@ const IndexPage: React.FC<IndexProps> = (props) => {
         <meta content={height} property="og:image:height" />
       </Helmet>
       <Wrapper>
-        <header
-          css={[outer, SiteHeader]}
-          style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fluid.src}')`,
-          }}
-        >
-          <div css={inner}>
-            <SiteHeaderContent>
-              <SiteTitle>
-                {props.data.logo ? (
-                  <img alt={config.title} src={props.data.logo.childImageSharp.fixed.src} style={{maxHeight: "45px"}} />
-                ) : (
-                  config.title
-                )}
-              </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
-            </SiteHeaderContent>
-            <SiteNav isHome />
-          </div>
-        </header>
+        <SiteNav />
+        <AuthorHeader author={props.data.authorYaml} />
         <main css={[SiteMain, outer]} id="site-main">
           <div css={inner}>
             <div css={[PostFeed, PostFeedRaise]}>
@@ -165,7 +165,7 @@ const IndexPage: React.FC<IndexProps> = (props) => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query blogPageQuery($skip: Int!, $limit: Int!, $author: String) {
     logo: file(relativePath: {eq: "meta/img/logo.png"}) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
@@ -223,6 +223,25 @@ export const pageQuery = graphql`
           fields {
             layout
             slug
+          }
+        }
+      }
+    }
+    authorYaml(id: {eq: $author}) {
+      id
+      bio
+      name
+      profile_image {
+        childImageSharp {
+          fluid(maxWidth: 3720) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      avatar {
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
           }
         }
       }

@@ -1,15 +1,17 @@
 // tslint:disable:no-http-string
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import * as React from "react";
 import styled from "@emotion/styled";
-import {css} from "@emotion/core";
+import { css } from "@emotion/core";
 
-import {SocialLink} from "../../styles/shared";
+import { SocialLink } from "../../styles/shared";
 import config from "../../website-config";
 import Facebook from "../icons/facebook";
 import Twitter from "../icons/twitter";
 import Github from "../icons/github";
 import SubscribeModal from "../subscribe/SubscribeOverlay";
+
+import { outer, inner, SiteHeader } from "../../styles/shared"
 
 import SiteNavLogo from "./SiteNavLogo";
 
@@ -30,7 +32,6 @@ const SiteNavStyles = css`
   height: 40px;
   font-size: 1.2rem;
   background: rgba(0, 0, 0, 0.75);
-  padding: 0 20px;
   border-radius: 4px;
 `;
 
@@ -49,7 +50,8 @@ const SiteNavLeft = styled.div`
 
   @media (max-width: 700px) {
     margin-right: 0;
-    padding-left: 4vw;
+    flex: 1;
+    justify-content: space-between;
   }
 `;
 
@@ -131,42 +133,47 @@ class SiteNav extends React.Component<SiteNavProps> {
   };
 
   render() {
-    const {isHome = false} = this.props;
+    const { isHome = false } = this.props;
+
     return (
-      <nav css={[isHome && HomeNavRaise, SiteNavStyles]}>
-        <SiteNavLeft>
-          {!isHome && <SiteNavLogo />}
-          <ul css={NavStyles} role="menu">
-            <li role="menuitem">
-              <Link to="/">Home</Link>
-            </li>
-            <li role="menuitem">
-              <Link to="/about">About me</Link>
-            </li>
-          </ul>
-        </SiteNavLeft>
-        <SiteNavRight>
-          <SocialLinks>
-            {config.facebook && (
-              <a css={SocialLink} href={config.facebook} rel="noopener noreferrer" target="_blank" title="Facebook">
-                <Facebook />
-              </a>
-            )}
-            {config.twitter && (
-              <a css={SocialLink} href={config.twitter} rel="noopener noreferrer" target="_blank" title="Twitter">
-                <Twitter />
-              </a>
-            )}
-            {config.github && (
-              <a css={SocialLink} href={config.github} rel="noopener noreferrer" target="_blank" title="Github">
-                <Github />
-              </a>
-            )}
-          </SocialLinks>
-          {config.showSubscribe && <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>}
-          {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
-        </SiteNavRight>
-      </nav>
+      <div css={[outer, SiteHeader]}>
+        <div css={inner}>
+          <nav css={[isHome && HomeNavRaise, SiteNavStyles]}>
+            <SiteNavLeft>
+              {!isHome && <SiteNavLogo />}
+              <ul css={NavStyles} role="menu">
+                <li role="menuitem">
+                  <Link to="/">Home</Link>
+                </li>
+                <li role="menuitem">
+                  <Link to="/about">About me</Link>
+                </li>
+              </ul>
+            </SiteNavLeft>
+            <SiteNavRight>
+              <SocialLinks>
+                {config.facebook && (
+                  <a css={SocialLink} href={config.facebook} rel="noopener noreferrer" target="_blank" title="Facebook">
+                    <Facebook />
+                  </a>
+                )}
+                {config.twitter && (
+                  <a css={SocialLink} href={config.twitter} rel="noopener noreferrer" target="_blank" title="Twitter">
+                    <Twitter />
+                  </a>
+                )}
+                {config.github && (
+                  <a css={SocialLink} href={config.github} rel="noopener noreferrer" target="_blank" title="Github">
+                    <Github />
+                  </a>
+                )}
+              </SocialLinks>
+              {config.showSubscribe && <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>}
+              {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
+            </SiteNavRight>
+          </nav>
+        </div>
+      </div>
     );
   }
 }

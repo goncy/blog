@@ -25,6 +25,10 @@ export interface WebsiteConfig {
    */
   github?: string;
   /**
+   * full url, no username
+   */
+  twitch?: string;
+  /**
    * hide or show all email subscribe boxes
    */
   showSubscribe: boolean;
@@ -53,14 +57,15 @@ export interface WebsiteConfig {
 }
 
 const config: WebsiteConfig = {
-  title: "Gonzalo Pozzo",
-  description: "Personal thoughts",
+  title: "Opinionated blog by Gonzalo Pozzo",
+  description: "Senior Frontend Developer | Cypress.io Ambassador",
   coverImage: "meta/img/blog-cover.jpg",
   logo: "meta/img/logo.png",
   lang: "en",
   siteUrl: "http://gonzalopozzo.com",
   twitter: "https://twitter.com/goncy",
   github: "https://github.com/goncy",
+  twitch: "https://www.twitch.tv/goncypozzo",
   showSubscribe: false,
 };
 

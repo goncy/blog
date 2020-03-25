@@ -19,7 +19,7 @@ import Subscribe from "../components/subscribe/Subscribe";
 import Wrapper from "../components/Wrapper";
 import IndexLayout from "../layouts";
 import {colors} from "../styles/colors";
-import {inner, outer, SiteHeader, SiteMain} from "../styles/shared";
+import {inner, outer, SiteMain} from "../styles/shared";
 import config from "../website-config";
 
 export interface PageContext {
@@ -77,12 +77,12 @@ export const NoImage = css`
 
 export const PostFullHeader = styled.header`
   margin: 0 auto;
-  padding: 6vw 3vw 3vw;
+  padding: 6vw;
   max-width: 1040px;
   text-align: center;
 
   @media (max-width: 500px) {
-    padding: 14vw 3vw 10vw;
+    padding: 14vw 3vw 14vw;
   }
 `;
 
@@ -263,11 +263,7 @@ const PageTemplate: React.FC<PageTemplateProps> = (props) => {
         {height && <meta content={height} property="og:image:height" />}
       </Helmet>
       <Wrapper css={PostTemplate}>
-        <header css={[outer, SiteHeader]}>
-          <div css={inner}>
-            <SiteNav />
-          </div>
-        </header>
+        <SiteNav />
         <main className="site-main" css={[SiteMain, outer]} id="site-main">
           <div css={inner}>
             {/* TODO: no-image css tag? */}
