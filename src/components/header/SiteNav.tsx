@@ -1,16 +1,17 @@
 // tslint:disable:no-http-string
-import { Link } from 'gatsby';
-import * as React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import {Link} from "gatsby";
+import * as React from "react";
+import styled from "@emotion/styled";
+import {css} from "@emotion/core";
 
-import { SocialLink } from '../../styles/shared';
-import config from '../../website-config';
-import Facebook from '../icons/facebook';
-import Twitter from '../icons/twitter';
-import Github from '../icons/github';
-import SubscribeModal from '../subscribe/SubscribeOverlay';
-import SiteNavLogo from './SiteNavLogo';
+import {SocialLink} from "../../styles/shared";
+import config from "../../website-config";
+import Facebook from "../icons/facebook";
+import Twitter from "../icons/twitter";
+import Github from "../icons/github";
+import SubscribeModal from "../subscribe/SubscribeOverlay";
+
+import SiteNavLogo from "./SiteNavLogo";
 
 const HomeNavRaise = css`
   @media (min-width: 900px) {
@@ -28,7 +29,7 @@ const SiteNavStyles = css`
   overflow-y: hidden;
   height: 40px;
   font-size: 1.2rem;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.75);
   padding: 0 20px;
   border-radius: 4px;
 `;
@@ -130,7 +131,7 @@ class SiteNav extends React.Component<SiteNavProps> {
   };
 
   render() {
-    const { isHome = false } = this.props;
+    const {isHome = false} = this.props;
     return (
       <nav css={[isHome && HomeNavRaise, SiteNavStyles]}>
         <SiteNavLeft>
@@ -147,42 +148,22 @@ class SiteNav extends React.Component<SiteNavProps> {
         <SiteNavRight>
           <SocialLinks>
             {config.facebook && (
-              <a
-                css={SocialLink}
-                href={config.facebook}
-                target="_blank"
-                title="Facebook"
-                rel="noopener noreferrer"
-              >
+              <a css={SocialLink} href={config.facebook} rel="noopener noreferrer" target="_blank" title="Facebook">
                 <Facebook />
               </a>
             )}
             {config.twitter && (
-              <a
-                css={SocialLink}
-                href={config.twitter}
-                title="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a css={SocialLink} href={config.twitter} rel="noopener noreferrer" target="_blank" title="Twitter">
                 <Twitter />
               </a>
             )}
             {config.github && (
-              <a
-                css={SocialLink}
-                href={config.github}
-                title="Github"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a css={SocialLink} href={config.github} rel="noopener noreferrer" target="_blank" title="Github">
                 <Github />
               </a>
             )}
           </SocialLinks>
-          {config.showSubscribe && (
-            <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
-          )}
+          {config.showSubscribe && <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>}
           {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
         </SiteNavRight>
       </nav>

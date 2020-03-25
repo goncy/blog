@@ -1,18 +1,18 @@
-import { Link } from 'gatsby';
-import { setLightness } from 'polished';
-import * as React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import {Link} from "gatsby";
+import {setLightness} from "polished";
+import * as React from "react";
+import styled from "@emotion/styled";
+import {css} from "@emotion/core";
 
-import { colors } from '../styles/colors';
-import { outer, inner } from '../styles/shared';
-import config from '../website-config';
+import {colors} from "../styles/colors";
+import {outer, inner} from "../styles/shared";
+import config from "../website-config";
 
 const SiteFooter = css`
   position: relative;
   padding: 20px;
   color: #fff;
-  background: ${setLightness('0.0015', colors.darkgrey)};
+  background: ${setLightness("0.0015", colors.darkgrey)};
 `;
 
 const SiteFooterContent = css`
@@ -43,7 +43,7 @@ const SiteFooterNav = styled.nav`
   }
 
   a:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 11px;
     left: -11px;
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}{' '}
+          <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}{" "}
           {config.footer && (
             <Link to="/">
               | {config.title} {config.footer}
@@ -79,17 +79,17 @@ const Footer: React.FC = () => {
         <SiteFooterNav>
           <Link to="/">Latest Posts</Link>
           {config.facebook && (
-            <a href={config.facebook} target="_blank" rel="noopener noreferrer">
+            <a href={config.facebook} rel="noopener noreferrer" target="_blank">
               Facebook
             </a>
           )}
           {config.github && (
-            <a href={config.github} target="_blank" rel="noopener noreferrer">
+            <a href={config.github} rel="noopener noreferrer" target="_blank">
               Github
             </a>
           )}
           {config.twitter && (
-            <a href={config.twitter} target="_blank" rel="noopener noreferrer">
+            <a href={config.twitter} rel="noopener noreferrer" target="_blank">
               Twitter
             </a>
           )}

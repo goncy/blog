@@ -1,11 +1,12 @@
-import { Link, StaticQuery, graphql } from 'gatsby';
-import * as React from 'react';
-import styled from '@emotion/styled';
-import * as _ from 'lodash';
+import {Link, StaticQuery, graphql} from "gatsby";
+import * as React from "react";
+import styled from "@emotion/styled";
+import * as _ from "lodash";
 
-import { colors } from '../styles/colors';
-import InfinityIcon from './icons/infinity';
-import config from '../website-config';
+import {colors} from "../styles/colors";
+import config from "../website-config";
+
+import InfinityIcon from "./icons/infinity";
 
 export interface ReadNextCardStylesProps {
   coverImage: string;
@@ -24,7 +25,7 @@ const ReadNextCardStyles = styled.article<ReadNextCardStylesProps>`
   background-size: cover;
   border-radius: 5px;
   box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-  background-image: url(${props => props.coverImage});
+  background-image: url(${(props) => props.coverImage});
 
   :before {
     content: "";
@@ -34,7 +35,7 @@ const ReadNextCardStyles = styled.article<ReadNextCardStylesProps>`
     bottom: 0;
     left: 0;
     display: block;
-    background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 40, 60, 0.8) 0%, rgba(0, 20, 40, 0.7) 100%);
     border-radius: 5px;
     backdrop-filter: blur(2px);
   }
@@ -169,12 +170,12 @@ export interface ReadNextQuery {
   };
 }
 
-const ReadNextCard: React.FC<ReadNextProps> = props => {
+const ReadNextCard: React.FC<ReadNextProps> = (props) => {
   return (
     <StaticQuery
       query={graphql`
         query ReadNextQuery {
-          header: file(relativePath: { eq: "meta/img/blog-cover.jpg" }) {
+          header: file(relativePath: {eq: "meta/img/blog-cover.jpg"}) {
             childImageSharp {
               # Specify the image processing specifications right in the query.
               # Makes it trivial to update as your page's design changes.
@@ -186,12 +187,10 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
         }
       `}
       // tslint:disable-next-line:react-this-binding-issue
-      render={({ header }: ReadNextQuery) => (
+      render={({header}: ReadNextQuery) => (
         <ReadNextCardStyles coverImage={header.childImageSharp.fluid.src}>
           <ReadNextCardHeader>
-            <ReadNextCardHeaderSitetitle>
-              &mdash; {config.title} &mdash;
-            </ReadNextCardHeaderSitetitle>
+            <ReadNextCardHeaderSitetitle>&mdash; {config.title} &mdash;</ReadNextCardHeaderSitetitle>
             <ReadNextCardHeaderTitle>
               <Link to={`/tags/${_.kebabCase(props.tags[0])}/`}>{props.tags[0]}</Link>
             </ReadNextCardHeaderTitle>
@@ -201,7 +200,7 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
           </ReadNextDivider>
           <ReadNextCardContent>
             <ul>
-              {props.relatedPosts.edges.map(n => {
+              {props.relatedPosts.edges.map((n) => {
                 return (
                   <li key={n.node.frontmatter.title}>
                     <Link to={n.node.fields.slug}>{n.node.frontmatter.title}</Link>
@@ -212,10 +211,9 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
           </ReadNextCardContent>
           <ReadNextCardFooter>
             <Link to={`/tags/${_.kebabCase(props.tags[0])}/`}>
-              {props.relatedPosts.totalCount > 1 &&
-                `See all ${props.relatedPosts.totalCount} posts`}
-              {props.relatedPosts.totalCount === 1 && '1 post'}
-              {props.relatedPosts.totalCount === 0 && 'No posts'} →
+              {props.relatedPosts.totalCount > 1 && `See all ${props.relatedPosts.totalCount} posts`}
+              {props.relatedPosts.totalCount === 1 && "1 post"}
+              {props.relatedPosts.totalCount === 0 && "No posts"} →
             </Link>
           </ReadNextCardFooter>
         </ReadNextCardStyles>

@@ -1,11 +1,12 @@
-import { graphql } from 'gatsby';
-import React from 'react';
+import {graphql} from "gatsby";
+import React from "react";
+import Helmet from "react-helmet";
 
-import Footer from '../components/Footer';
-import SiteNav from '../components/header/SiteNav';
-import PostCard from '../components/PostCard';
-import Wrapper from '../components/Wrapper';
-import IndexLayout from '../layouts';
+import Footer from "../components/Footer";
+import SiteNav from "../components/header/SiteNav";
+import PostCard from "../components/PostCard";
+import Wrapper from "../components/Wrapper";
+import IndexLayout from "../layouts";
 import {
   inner,
   outer,
@@ -16,10 +17,10 @@ import {
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
-} from '../styles/shared';
-import { PageContext } from './post';
-import Helmet from 'react-helmet';
-import config from '../website-config';
+} from "../styles/shared";
+import config from "../website-config";
+
+import {PageContext} from "./post";
 
 interface TagTemplateProps {
   pathContext: {
@@ -51,12 +52,10 @@ interface TagTemplateProps {
   };
 }
 
-const Tags: React.FC<TagTemplateProps> = props => {
-  const tag = (props.pageContext.tag) ? props.pageContext.tag : '';
-  const { edges, totalCount } = props.data.allMarkdownRemark;
-  const tagData = props.data.allTagYaml.edges.find(
-    n => n.node.id.toLowerCase() === tag.toLowerCase(),
-  );
+const Tags: React.FC<TagTemplateProps> = (props) => {
+  const tag = props.pageContext.tag ? props.pageContext.tag : "";
+  const {edges, totalCount} = props.data.allMarkdownRemark;
+  const tagData = props.data.allTagYaml.edges.find((n) => n.node.id.toLowerCase() === tag.toLowerCase());
 
   return (
     <IndexLayout>
@@ -65,34 +64,24 @@ const Tags: React.FC<TagTemplateProps> = props => {
         <title>
           {tag} - {config.title}
         </title>
-        <meta
-          name="description"
-          content={tagData && tagData.node ? tagData.node.description : ''}
-        />
-        <meta property="og:site_name" content={config.title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${tag} - ${config.title}`} />
-        <meta property="og:url" content={config.siteUrl + props.pathContext.slug} />
-        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${tag} - ${config.title}`} />
-        <meta name="twitter:url" content={config.siteUrl + props.pathContext.slug} />
-        {config.twitter && (
-          <meta
-            name="twitter:site"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
-        )}
+        <meta content={tagData && tagData.node ? tagData.node.description : ""} name="description" />
+        <meta content={config.title} property="og:site_name" />
+        <meta content="website" property="og:type" />
+        <meta content={`${tag} - ${config.title}`} property="og:title" />
+        <meta content={config.siteUrl + props.pathContext.slug} property="og:url" />
+        {config.facebook && <meta content={config.facebook} property="article:publisher" />}
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content={`${tag} - ${config.title}`} name="twitter:title" />
+        <meta content={config.siteUrl + props.pathContext.slug} name="twitter:url" />
+        {config.twitter && <meta content={`@${config.twitter.split("https://twitter.com/")[1]}`} name="twitter:site" />}
       </Helmet>
       <Wrapper>
         <header
-          className={`${tagData && tagData.node.image ? '' : 'no-cover'}`}
+          className={`${tagData && tagData.node.image ? "" : "no-cover"}`}
           css={[outer, SiteHeader]}
           style={{
             backgroundImage:
-              tagData && tagData.node.image ?
-                `url('${tagData.node.image.childImageSharp.fluid.src}')` :
-                '',
+              tagData && tagData.node.image ? `url('${tagData.node.image.childImageSharp.fluid.src}')` : "",
           }}
         >
           <div css={inner}>
@@ -105,18 +94,18 @@ const Tags: React.FC<TagTemplateProps> = props => {
                 ) : (
                   <>
                     A collection of {totalCount > 1 && `${totalCount} posts`}
-                    {totalCount === 1 && '1 post'}
-                    {totalCount === 0 && 'No posts'}
+                    {totalCount === 1 && "1 post"}
+                    {totalCount === 0 && "No posts"}
                   </>
                 )}
               </SiteDescription>
             </SiteHeaderContent>
           </div>
         </header>
-        <main id="site-main" css={[SiteMain, outer]}>
+        <main css={[SiteMain, outer]} id="site-main">
           <div css={inner}>
             <div css={[PostFeed, PostFeedRaise]}>
-              {edges.map(({ node }) => (
+              {edges.map(({node}) => (
                 <PostCard key={node.fields.slug} post={node} />
               ))}
             </div>
@@ -149,8 +138,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {tags: {in: [$tag]}, draft: {ne: true}}}
     ) {
       totalCount
       edges {

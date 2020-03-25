@@ -1,13 +1,13 @@
-import { Link } from 'gatsby';
-import Img from 'gatsby-image';
-import * as _ from 'lodash';
-import { lighten } from 'polished';
-import * as React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import {Link} from "gatsby";
+import Img from "gatsby-image";
+import * as _ from "lodash";
+import {lighten} from "polished";
+import * as React from "react";
+import styled from "@emotion/styled";
+import {css} from "@emotion/core";
 
-import { colors } from '../styles/colors';
-import { PageContext } from '../templates/post';
+import {colors} from "../styles/colors";
+import {PageContext} from "../templates/post";
 
 const PostCardStyles = css`
   flex: 1 1 300px;
@@ -176,7 +176,7 @@ const AuthorProfileImage = styled.img`
   width: 100%;
   height: 100%;
   /* background: color(var(--lightgrey) l(+10%)); */
-  background: ${lighten('0.1', colors.lightgrey)};
+  background: ${lighten("0.1", colors.lightgrey)};
   border-radius: 100%;
   object-fit: cover;
 `;
@@ -196,24 +196,21 @@ export interface PostCardProps {
   post: PageContext;
 }
 
-const PostCard: React.FC<PostCardProps> = ({ post }) => {
+const PostCard: React.FC<PostCardProps> = ({post}) => {
   return (
-    <article
-      className={`post-card ${post.frontmatter.image ? '' : 'no-image'}`}
-      css={PostCardStyles}
-    >
+    <article className={`post-card ${post.frontmatter.image ? "" : "no-image"}`} css={PostCardStyles}>
       {post.frontmatter.image && (
         <Link className="post-card-image-link" css={PostCardImageLink} to={post.fields.slug}>
           <PostCardImage className="post-card-image">
             {post.frontmatter.image &&
               post.frontmatter.image.childImageSharp &&
               post.frontmatter.image.childImageSharp.fluid && (
-              <Img
-                alt={`${post.frontmatter.title} cover image`}
-                style={{ height: '100%' }}
-                fluid={post.frontmatter.image.childImageSharp.fluid}
-              />
-            )}
+                <Img
+                  alt={`${post.frontmatter.title} cover image`}
+                  fluid={post.frontmatter.image.childImageSharp.fluid}
+                  style={{height: "100%"}}
+                />
+              )}
           </PostCardImage>
         </Link>
       )}
@@ -230,13 +227,11 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         <PostCardMeta className="post-card-meta">
           <AuthorList>
             <AuthorListItem>
-              <AuthorNameTooltip className="author-name-tooltip">
-                {post.frontmatter.author.id}
-              </AuthorNameTooltip>
+              <AuthorNameTooltip className="author-name-tooltip">{post.frontmatter.author.id}</AuthorNameTooltip>
               <Link css={StaticAvatar} to={`/author/${_.kebabCase(post.frontmatter.author.id)}/`}>
                 <AuthorProfileImage
-                  src={post.frontmatter.author.avatar.children[0].fixed.src}
                   alt={post.frontmatter.author.id}
+                  src={post.frontmatter.author.avatar.children[0].fixed.src}
                 />
               </Link>
             </AuthorListItem>

@@ -1,16 +1,15 @@
-import { graphql } from 'gatsby';
-import * as React from 'react';
-import { css } from '@emotion/core';
-import Helmet from 'react-helmet';
+import {graphql} from "gatsby";
+import * as React from "react";
+import {css} from "@emotion/core";
+import Helmet from "react-helmet";
 
-import Footer from '../components/Footer';
-import SiteNav from '../components/header/SiteNav';
-import PostCard from '../components/PostCard';
-import Wrapper from '../components/Wrapper';
-import IndexLayout from '../layouts';
-import config from '../website-config';
-import Pagination from '../components/Pagination';
-
+import Footer from "../components/Footer";
+import SiteNav from "../components/header/SiteNav";
+import PostCard from "../components/PostCard";
+import Wrapper from "../components/Wrapper";
+import IndexLayout from "../layouts";
+import config from "../website-config";
+import Pagination from "../components/Pagination";
 import {
   inner,
   outer,
@@ -21,8 +20,9 @@ import {
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
-} from '../styles/shared';
-import { PageContext } from './post';
+} from "../styles/shared";
+
+import {PageContext} from "./post";
 
 const HomePosts = css`
   @media (min-width: 795px) {
@@ -90,8 +90,8 @@ export interface IndexProps {
   };
 }
 
-const IndexPage: React.FC<IndexProps> = props => {
-  const width = props.data.header.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
+const IndexPage: React.FC<IndexProps> = (props) => {
+  const width = props.data.header.childImageSharp.fluid.sizes.split(", ")[1].split("px")[0];
   const height = String(Number(width) / props.data.header.childImageSharp.fluid.aspectRatio);
 
   return (
@@ -99,34 +99,25 @@ const IndexPage: React.FC<IndexProps> = props => {
       <Helmet>
         <html lang={config.lang} />
         <title>{config.title}</title>
-        <meta name="description" content={config.description} />
-        <meta property="og:site_name" content={config.title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={config.title} />
-        <meta property="og:description" content={config.description} />
-        <meta property="og:url" content={config.siteUrl} />
-        <meta
-          property="og:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`}
-        />
-        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        {config.googleSiteVerification && <meta name="google-site-verification" content={config.googleSiteVerification} />}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={config.title} />
-        <meta name="twitter:description" content={config.description} />
-        <meta name="twitter:url" content={config.siteUrl} />
-        <meta
-          name="twitter:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`}
-        />
-        {config.twitter && (
-          <meta
-            name="twitter:site"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
+        <meta content={config.description} name="description" />
+        <meta content={config.title} property="og:site_name" />
+        <meta content="website" property="og:type" />
+        <meta content={config.title} property="og:title" />
+        <meta content={config.description} property="og:description" />
+        <meta content={config.siteUrl} property="og:url" />
+        <meta content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`} property="og:image" />
+        {config.facebook && <meta content={config.facebook} property="article:publisher" />}
+        {config.googleSiteVerification && (
+          <meta content={config.googleSiteVerification} name="google-site-verification" />
         )}
-        <meta property="og:image:width" content={width} />
-        <meta property="og:image:height" content={height} />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content={config.title} name="twitter:title" />
+        <meta content={config.description} name="twitter:description" />
+        <meta content={config.siteUrl} name="twitter:url" />
+        <meta content={`${config.siteUrl}${props.data.header.childImageSharp.fluid.src}`} name="twitter:image" />
+        {config.twitter && <meta content={`@${config.twitter.split("https://twitter.com/")[1]}`} name="twitter:site" />}
+        <meta content={width} property="og:image:width" />
+        <meta content={height} property="og:image:height" />
       </Helmet>
       <Wrapper>
         <header
@@ -139,11 +130,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteHeaderContent>
               <SiteTitle>
                 {props.data.logo ? (
-                  <img
-                    style={{ maxHeight: '45px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
-                    alt={config.title}
-                  />
+                  <img alt={config.title} src={props.data.logo.childImageSharp.fixed.src} style={{maxHeight: "45px"}} />
                 ) : (
                   config.title
                 )}
@@ -153,14 +140,13 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteNav isHome />
           </div>
         </header>
-        <main id="site-main" css={[SiteMain, outer]}>
+        <main css={[SiteMain, outer]} id="site-main">
           <div css={inner}>
             <div css={[PostFeed, PostFeedRaise]}>
-              {props.data.allMarkdownRemark.edges.map(post => {
+              {props.data.allMarkdownRemark.edges.map((post) => {
                 // filter out drafts in production
                 return (
-                  (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
+                  (post.node.frontmatter.draft !== true || process.env.NODE_ENV !== "production") && (
                     <PostCard key={post.node.fields.slug} post={post.node} />
                   )
                 );
@@ -180,7 +166,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "meta/img/logo.png" }) {
+    logo: file(relativePath: {eq: "meta/img/logo.png"}) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -189,7 +175,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    header: file(relativePath: { eq: "meta/img/blog-cover.jpg" }) {
+    header: file(relativePath: {eq: "meta/img/blog-cover.jpg"}) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -199,9 +185,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC },
-      filter: { frontmatter: { draft: { ne: true } } },
-      limit: $limit,
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {draft: {ne: true}}}
+      limit: $limit
       skip: $skip
     ) {
       edges {

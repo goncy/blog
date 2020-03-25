@@ -1,4 +1,5 @@
 node_modules/
-public/
+coverage/
+.idea/
+.vscode/
 build/
-.cache/

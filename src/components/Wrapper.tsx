@@ -1,5 +1,5 @@
-import * as React from 'react';
-import styled from '@emotion/styled';
+import * as React from "react";
+import styled from "@emotion/styled";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ interface WrapperProps {
   className?: string;
 }
 
-const Wrapper: React.FC<WrapperProps> = ({ children, className }) => (
+const Wrapper: React.FC<WrapperProps> = ({children, className}) => (
   <StyledWrapper className={className}>{children}</StyledWrapper>
 );
 

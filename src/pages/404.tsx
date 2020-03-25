@@ -1,15 +1,15 @@
-import { graphql, Link } from 'gatsby';
-import * as React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import {graphql, Link} from "gatsby";
+import * as React from "react";
+import styled from "@emotion/styled";
+import {css} from "@emotion/core";
 
-import SiteNavLogo from '../components/header/SiteNavLogo';
-import PostCard from '../components/PostCard';
-import Wrapper from '../components/Wrapper';
-import IndexLayout from '../layouts';
-import { colors } from '../styles/colors';
-import { inner, outer, PostFeed, SiteHeader } from '../styles/shared';
-import { PageContext } from '../templates/post';
+import SiteNavLogo from "../components/header/SiteNavLogo";
+import PostCard from "../components/PostCard";
+import Wrapper from "../components/Wrapper";
+import IndexLayout from "../layouts";
+import {colors} from "../styles/colors";
+import {inner, outer, PostFeed, SiteHeader} from "../styles/shared";
+import {PageContext} from "../templates/post";
 
 const SiteNavCenter = styled.nav`
   display: flex;
@@ -58,8 +58,8 @@ interface NotFoundTemplateProps {
   };
 }
 
-const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
-  const { edges } = props.data.allMarkdownRemark;
+const NotFoundPage: React.FC<NotFoundTemplateProps> = (props) => {
+  const {edges} = props.data.allMarkdownRemark;
 
   return (
     <IndexLayout>
@@ -71,9 +71,9 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
             </SiteNavCenter>
           </div>
         </header>
-        <main id="site-main" css={[ErrorTemplate, outer]}>
+        <main css={[ErrorTemplate, outer]} id="site-main">
           <div css={inner}>
-            <section style={{ textAlign: 'center' }}>
+            <section style={{textAlign: "center"}}>
               <ErrorCode>404</ErrorCode>
               <ErrorDescription>Page not found</ErrorDescription>
               <Link css={ErrorLink} to="">
@@ -85,7 +85,7 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
         <aside css={outer}>
           <div css={inner}>
             <div css={PostFeed}>
-              {edges.map(({ node }) => (
+              {edges.map(({node}) => (
                 <PostCard key={node.fields.slug} post={node} />
               ))}
             </div>
@@ -100,7 +100,7 @@ export default NotFoundPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 3, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(limit: 3, sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
           timeToRead
