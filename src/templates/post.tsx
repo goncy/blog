@@ -22,6 +22,36 @@ import {colors} from "../styles/colors";
 import {inner, outer, SiteHeader, SiteMain} from "../styles/shared";
 import config from "../website-config";
 
+export interface PageContext {
+  excerpt: string;
+  timeToRead: number;
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    image: {
+      childImageSharp: {
+        fluid: any;
+      };
+    };
+    title: string;
+    date: string;
+    draft?: boolean;
+    tags: string[];
+    author: {
+      id: string;
+      bio: string;
+      avatar: {
+        children: Array<{
+          fixed: {
+            src: string;
+          };
+        }>;
+      };
+    };
+  };
+}
+
 const PostTemplate = css`
   .site-main {
     background: #fff;
@@ -180,36 +210,6 @@ interface PageTemplateProps {
   pageContext: {
     prev: PageContext;
     next: PageContext;
-  };
-}
-
-export interface PageContext {
-  excerpt: string;
-  timeToRead: number;
-  fields: {
-    slug: string;
-  };
-  frontmatter: {
-    image: {
-      childImageSharp: {
-        fluid: any;
-      };
-    };
-    title: string;
-    date: string;
-    draft?: boolean;
-    tags: string[];
-    author: {
-      id: string;
-      bio: string;
-      avatar: {
-        children: Array<{
-          fixed: {
-            src: string;
-          };
-        }>;
-      };
-    };
   };
 }
 
