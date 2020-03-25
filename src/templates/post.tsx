@@ -284,7 +284,12 @@ const PageTemplate: React.FC<PageTemplateProps> = (props) => {
 
               {post.frontmatter.image && post.frontmatter.image.childImageSharp && (
                 <PostFullImage>
-                  <Img fluid={post.frontmatter.image.childImageSharp.fluid} style={{height: "100%"}} />
+                  <Img
+                    fluid={post.frontmatter.image.childImageSharp.fluid}
+                    imgStyle={{objectFit: "contain"}}
+                    placeholderStyle={{objectFit: "cover", opacity: 1}}
+                    style={{height: "100%"}}
+                  />
                 </PostFullImage>
               )}
               <PostContent htmlAst={post.htmlAst} />
