@@ -6,7 +6,7 @@ author: goncy
 permalink: intro-a-cypress
 date: 2020-03-23T07:03:47.149Z
 draft: false
-tags: 
+tags:
   - Testing
   - Español
   - Lesson
@@ -22,18 +22,17 @@ Vamos a armar tests para una app muuuy simple, que nos va a mostrar con emojis c
 
 (Tip: Si simplemente queres ver el código, podes navegar o clonar este repo, tiene todo terminado y funcionando)
 
-## Qué tiene de loco Cypress?
+## Qué ventajas tiene Cypress?
 Bueno, además de ser muy simple de usar me permitió hacer de forma fácil algo que siempre pensé hacer y nunca pude (o no busqué bien), elegir que devuelven los llamados http que hago dentro de mi app. Muchas veces nosotros no tenemos control de lo que devuelve nuestra API (por que usa datos externos, por que no nos pertenece, etc), entonces esto es algo muy importante para asegurarnos de que nuestros features funcionan sin preocuparnos por el servidor.
 
 > ![02](./assets/stub.png)
 
 ## Vamos a empezar!
+Para este ejemplo vamos a usar React, para eso vamos a ayudarnos con [Create react app](https://github.com/facebook/create-react-app)
 
 ### 🤓 Creando nuestro proyecto
-Para este ejemplo vamos a usar React, para eso vamos a ayudarnos con [Create react app](https://github.com/facebook/create-react-app):
-
 ```bash
-yarn create react-app humor-del-dia
+npx create-react-app humor-del-dia
 ```
 
 > ![04](./assets/cra-create.png)
@@ -44,7 +43,7 @@ Esto va a instalar todas las dependencias que nuestro proyecto necesita, mientra
 Una vez que tenemos nuestro proyecto creado y abierto, vamos a instalar Cypress, para eso, dirigite a la consola (asegurate de estar dentro del directorio del proyecto) y ejecutá:
 
 ```bash
-yarn add cypress --dev
+npm install cypress --dev
 ```
 
 Eso va a instalar Cypress como una dependencia de desarrollo, esto va a tardar un rato ya que tiene que bajar el binario. Mientras tanto seguimos con los otros pasos.

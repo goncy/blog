@@ -27,7 +27,7 @@ Para esto vamos a crear una aplicación muy simple que va a obtener un chiste de
 Lo primero que vamos a hacer es crear una nueva aplicación usando [create-react-app](https://github.com/facebook/create-react-app)
 
 ```bash
-yarn create react-app reducing-boilerplate
+npx create-react-app reducing-boilerplate
 ```
 
 Vamos a iniciar nuestra aplicación para asegurarnos de que todo anda correctamente.
@@ -35,7 +35,7 @@ Vamos a iniciar nuestra aplicación para asegurarnos de que todo anda correctame
 Nos situamos en la carpeta reducing-boilerplate que creó create-react-app y ejecutamos:
 
 ```bash
-yarn start
+npm start
 ```
 
 Se va a abrir una nueva pestaña en el navegador y vamos a ver la siguiente pantalla:
@@ -72,7 +72,7 @@ Por ahora nuestros archivos van a quedar vacíos pero ya vamos a ir a eso más a
 Vamos a instalar las dependencias necesarias:
 
 ```bash
-yarn add redux react-redux
+npm install redux react-redux
 ```
 
 Creamos una carpeta db dentro de src, con los archivos reducers.js (nuestro root reducer), store.js (la configuración de redux), utils.js (una utilidad que vamos a ver en un rato).
