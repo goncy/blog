@@ -13,6 +13,7 @@ import {
   SocialLink,
 } from "../../styles/shared";
 import Github from "../icons/github";
+import Twitch from "../icons/twitch";
 import Facebook from "../icons/facebook";
 import Website from "../icons/website";
 import Twitter from "../icons/twitter";
@@ -69,6 +70,7 @@ interface AuthorHeaderProps {
     twitter?: string;
     facebook?: string;
     github?: string;
+    twitch?: string;
     location?: string;
     profile_image?: {
       childImageSharp: {
@@ -157,6 +159,18 @@ const AuthorHeader: React.FC<AuthorHeaderProps> = ({author}) => {
                 title="Github"
               >
                 <Github />
+              </a>
+            )}
+            {author.twitch && (
+              <a
+                className="social-link-twitch"
+                css={SocialLink}
+                href={`https://www.twitch.tv/${author.twitch}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Twitch"
+              >
+                <Twitch />
               </a>
             )}
           </AuthorMeta>

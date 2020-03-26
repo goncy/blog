@@ -8,6 +8,7 @@ import config from "../../website-config";
 import Facebook from "../icons/facebook";
 import Twitter from "../icons/twitter";
 import Github from "../icons/github";
+import Twitch from "../icons/twitch";
 import SubscribeModal from "../subscribe/SubscribeOverlay";
 import {outer, inner, SiteHeader} from "../../styles/shared";
 
@@ -162,6 +163,11 @@ class SiteNav extends React.Component<SiteNavProps> {
                 {config.github && (
                   <a css={SocialLink} href={config.github} rel="noopener noreferrer" target="_blank" title="Github">
                     <Github />
+                  </a>
+                )}
+                {config.twitch && (
+                  <a css={SocialLink} href={config.twitch} rel="noopener noreferrer" target="_blank" title="Twitch">
+                    <Twitch />
                   </a>
                 )}
               </SocialLinks>

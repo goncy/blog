@@ -6,13 +6,7 @@ import Footer from "../components/Footer";
 import PostCard from "../components/PostCard";
 import Wrapper from "../components/Wrapper";
 import IndexLayout from "../layouts";
-import {
-  inner,
-  outer,
-  PostFeed,
-  PostFeedRaise,
-  SiteMain,
-} from "../styles/shared";
+import {inner, outer, PostFeed, PostFeedRaise, SiteMain} from "../styles/shared";
 import config from "../website-config";
 import AuthorHeader from "../components/header/AuthorHeader";
 import SiteNav from "../components/header/SiteNav";
@@ -44,6 +38,7 @@ interface AuthorTemplateProps {
       twitter?: string;
       facebook?: string;
       github?: string;
+      twitch?: string;
       location?: string;
       profile_image?: {
         childImageSharp: {
@@ -118,6 +113,7 @@ export const pageQuery = graphql`
       twitter
       bio
       github
+      twitch
       location
       profile_image {
         childImageSharp {

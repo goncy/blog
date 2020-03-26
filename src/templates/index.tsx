@@ -10,15 +10,7 @@ import SiteNav from "../components/header/SiteNav";
 import IndexLayout from "../layouts";
 import config from "../website-config";
 import Pagination from "../components/Pagination";
-import {
-  inner,
-  outer,
-  PostFeed,
-  PostFeedRaise,
-  SiteMain,
-  SiteHeader
-} from "../styles/shared";
-
+import {inner, outer, PostFeed, PostFeedRaise, SiteMain, SiteHeader} from "../styles/shared";
 import AuthorHeader from "../components/header/AuthorHeader";
 
 import {PageContext} from "./post";
@@ -104,7 +96,7 @@ export interface IndexProps {
           fluid: any;
         };
       };
-    }
+    };
   };
 }
 

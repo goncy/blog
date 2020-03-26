@@ -93,6 +93,11 @@ const Footer: React.FC = () => {
               Github
             </a>
           )}
+          {config.twitch && (
+            <a href={config.twitch} rel="noopener noreferrer" target="_blank">
+              Twitch
+            </a>
+          )}
           <a href="/rss.xml">RSS</a>
         </SiteFooterNav>
       </div>
