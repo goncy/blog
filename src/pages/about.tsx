@@ -5,7 +5,7 @@ import Helmet from "react-helmet";
 import IndexLayout from "../layouts";
 import Wrapper from "../components/Wrapper";
 import SiteNav from "../components/header/SiteNav";
-import {SiteHeader, outer, inner, SiteMain} from "../styles/shared";
+import {outer, SiteMain} from "../styles/shared";
 import {PostFullHeader, PostFullTitle, NoImage, PostFull} from "../templates/post";
 import {PostFullContent} from "../components/PostContent";
 import Footer from "../components/Footer";
@@ -23,11 +23,7 @@ const About: React.FC = () => (
       <title>About</title>
     </Helmet>
     <Wrapper css={PageTemplate}>
-      <header css={[outer, SiteHeader]}>
-        <div css={inner}>
-          <SiteNav />
-        </div>
-      </header>
+      <SiteNav />
       <main className="site-main" css={[SiteMain, outer]} id="site-main">
         <article className="post page" css={[PostFull, NoImage]}>
           <PostFullHeader>
