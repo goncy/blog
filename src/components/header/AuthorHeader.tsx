@@ -14,6 +14,7 @@ import {
 } from "../../styles/shared";
 import Github from "../icons/github";
 import Twitch from "../icons/twitch";
+import Linkedin from "../icons/linkedin";
 import Facebook from "../icons/facebook";
 import Website from "../icons/website";
 import Twitter from "../icons/twitter";
@@ -71,6 +72,7 @@ interface AuthorHeaderProps {
     facebook?: string;
     github?: string;
     twitch?: string;
+    linkedin?: string;
     location?: string;
     profile_image?: {
       childImageSharp: {
@@ -171,6 +173,18 @@ const AuthorHeader: React.FC<AuthorHeaderProps> = ({author}) => {
                 title="Twitch"
               >
                 <Twitch />
+              </a>
+            )}
+            {author.linkedin && (
+              <a
+                className="social-link-linkedin"
+                css={SocialLink}
+                href={`https://www.linkedin.com/in/${author.linkedin}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Linkedin"
+              >
+                <Linkedin />
               </a>
             )}
           </AuthorMeta>

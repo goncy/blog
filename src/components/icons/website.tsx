@@ -1,4 +1,3 @@
-// tslint:disable:no-http-string
 import * as React from "react";
 
 const Website: React.FC = () => (
@@ -12,4 +11,5 @@ const Website: React.FC = () => (
     />
   </svg>
 );
+
 export default Website;

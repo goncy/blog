@@ -39,6 +39,7 @@ interface AuthorTemplateProps {
       facebook?: string;
       github?: string;
       twitch?: string;
+      linkedin?: string;
       location?: string;
       profile_image?: {
         childImageSharp: {
@@ -114,6 +115,7 @@ export const pageQuery = graphql`
       bio
       github
       twitch
+      linkedin
       location
       profile_image {
         childImageSharp {

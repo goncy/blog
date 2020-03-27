@@ -1,4 +1,3 @@
-// tslint:disable:no-http-string
 import * as React from "react";
 
 const Twitch: React.FC = () => (
@@ -11,4 +10,5 @@ const Twitch: React.FC = () => (
     />
   </svg>
 );
+
 export default Twitch;

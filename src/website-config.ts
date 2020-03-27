@@ -29,6 +29,10 @@ export interface WebsiteConfig {
    */
   twitch?: string;
   /**
+   * full url, no username
+   */
+  linkedin?: string;
+  /**
    * hide or show all email subscribe boxes
    */
   showSubscribe: boolean;
@@ -66,6 +70,7 @@ const config: WebsiteConfig = {
   twitter: "https://twitter.com/goncy",
   github: "https://github.com/goncy",
   twitch: "https://www.twitch.tv/goncypozzo",
+  linkedin: "https://www.linkedin.com/in/gonzalopozzo/",
   showSubscribe: false,
 };
 

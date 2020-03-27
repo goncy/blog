@@ -193,7 +193,6 @@ Back in Cypress main screen, click on `mood.test.js` and wait for the tests to c
 ### 🎉 Done!
 Congrats! Now you have your small app tested with Cypress
 
-___
 ### 🗣 And now?
 Our tests pass!, but our app doesn't work, this is because our server doesn't exists, Cypress is simulating it, if you want to make it work, you can try with [micro](https://github.com/zeit/micro) or [json server](https://github.com/typicode/json-server), but this is out of this lesson 😛
 

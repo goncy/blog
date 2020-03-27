@@ -196,7 +196,6 @@ Volvemos a la pantalla de Cypress, hacemos click en `humor.test.js` y esperamos 
 ### 🎉 Listo!
 Felicitaciones! Ya tenes tu pequeña app testeada con Cypress
 
-___
 ### 🗣 Y ahora que?
 Ahora nuestros tests pasan!, pero nuestra app no funciona 😭, esto es por que nuestro server no existe y lo simulamos con Cypress. Si queres hacerlo funcionar podrías probar con [micro](https://github.com/zeit/micro) o [json server](https://github.com/typicode/json-server), pero eso ya esta fuera de esta lección 😛
 

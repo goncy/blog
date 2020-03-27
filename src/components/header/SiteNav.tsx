@@ -9,6 +9,7 @@ import Facebook from "../icons/facebook";
 import Twitter from "../icons/twitter";
 import Github from "../icons/github";
 import Twitch from "../icons/twitch";
+import Linkedin from "../icons/linkedin";
 import SubscribeModal from "../subscribe/SubscribeOverlay";
 import {outer, inner, SiteHeader} from "../../styles/shared";
 
@@ -168,6 +169,11 @@ class SiteNav extends React.Component<SiteNavProps> {
                 {config.twitch && (
                   <a css={SocialLink} href={config.twitch} rel="noopener noreferrer" target="_blank" title="Twitch">
                     <Twitch />
+                  </a>
+                )}
+                {config.linkedin && (
+                  <a css={SocialLink} href={config.linkedin} rel="noopener noreferrer" target="_blank" title="Linkedin">
+                    <Linkedin />
                   </a>
                 )}
               </SocialLinks>
