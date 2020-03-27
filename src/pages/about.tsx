@@ -51,7 +51,7 @@ const About: React.FC = () => (
                 If you want to know more about me, check{" "}
                 <a href="http://gonzalopozzo.com" rel="noopener noreferrer">
                   this short game
-                </a>{" "}
+                </a>
                 ,{" "}
                 <a
                   href="https://drive.google.com/open?id=16Jy5eyFb0NgeiD_TwXEII0sbtIccnEd0aWxkc5vIXWU"
