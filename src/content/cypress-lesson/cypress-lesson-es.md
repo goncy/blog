@@ -4,7 +4,7 @@ title: Cambiando tu ánimo con Cypress.io
 image: assets/install.png
 author: goncy
 permalink: intro-a-cypress
-date: 2020-03-23T07:03:47.149Z
+date: 2017-04-20T07:03:47.149Z
 draft: false
 tags:
   - Testing
@@ -15,17 +15,19 @@ tags:
 
 Este proyecto te va a mostrar como hacer tests de integración fáciles para tu app con [Cypress](https://www.cypress.io/), decidí hacerlo en español por que hay mucha gente que le interesa este tema y no tiene conocimientos de inglés, asi que aportamos un poco a la comunidad latina 💪
 
+> Este post lo escribí en 2017, el código es viejo pero debería seguir siendo relevante
+
 ## Qué vamos a hacer?
 Vamos a armar tests para una app muuuy simple, que nos va a mostrar con emojis cuál es nuestro humor según el día que elijamos de una lista.
 
-> ![01](./assets/demo.gif)
+![01](./assets/demo.gif)
 
 (Tip: Si simplemente queres ver el código, podes navegar o clonar este repo, tiene todo terminado y funcionando)
 
 ## Qué ventajas tiene Cypress?
 Bueno, además de ser muy simple de usar me permitió hacer de forma fácil algo que siempre pensé hacer y nunca pude (o no busqué bien), elegir que devuelven los llamados http que hago dentro de mi app. Muchas veces nosotros no tenemos control de lo que devuelve nuestra API (por que usa datos externos, por que no nos pertenece, etc), entonces esto es algo muy importante para asegurarnos de que nuestros features funcionan sin preocuparnos por el servidor.
 
-> ![02](./assets/stub.png)
+![02](./assets/stub.png)
 
 ## Vamos a empezar!
 Para este ejemplo vamos a usar React, para eso vamos a ayudarnos con [Create react app](https://github.com/facebook/create-react-app)
@@ -35,7 +37,7 @@ Para este ejemplo vamos a usar React, para eso vamos a ayudarnos con [Create rea
 npx create-react-app humor-del-dia
 ```
 
-> ![04](./assets/cra-create.png)
+![04](./assets/cra-create.png)
 
 Esto va a instalar todas las dependencias que nuestro proyecto necesita, mientras hace esto, vamos a abrir la carpeta que nos creó en nuestro editor favorito. Yo voy a usar [VSCode](https://code.visualstudio.com/), con mi lindo theme [Styncy](https://marketplace.visualstudio.com/items?itemName=goncy.styncy) (disclaimer de auto promoción 😛)
 
@@ -48,7 +50,7 @@ npm install cypress --dev
 
 Eso va a instalar Cypress como una dependencia de desarrollo, esto va a tardar un rato ya que tiene que bajar el binario. Mientras tanto seguimos con los otros pasos.
 
-> ![07](./assets/install.png)
+![07](./assets/install.png)
 
 ### 💫 Editando nuestra app
 Vamos a editar nuestra app para mostrar un humor que obtenemos de una API (que no existe) dependiendo del día que sea. Para eso abrimos el archivo `src/App.js` y reemplazamos su contenido por:
@@ -114,7 +116,7 @@ Vamos al archivo `package.json` y en la linea 15, dentro de scripts, debajo del 
 "test:integration": "cypress open"
 ```
 
-> ![05](./assets/script.png)
+![05](./assets/script.png)
 
 Esto nos va a permitir ejecutar Cypress al correr `npm run test:integration` (Tip: El script se puede llamar como quieras)
 
@@ -127,7 +129,7 @@ npm run test:integration
 
 Despues de unos segundos se nos va a abrir una ventana, avisandonos que se crearon varios archivos por defecto de ejemplo.
 
-> ![06](./assets/initial.png)
+![06](./assets/initial.png)
 
 ### 💅Configurando Cypress
 Lo único que tenemos que configurar de Cypress, es nuestra URL base, es decir, la URL de nuestra app, para eso vamos a `cypress.json` y reemplazamos su contenido por:

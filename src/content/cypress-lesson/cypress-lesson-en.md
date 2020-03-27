@@ -4,7 +4,7 @@ title: Mocking your mood with Cypress.io
 image: assets/install.png
 author: goncy
 permalink: cypress-intro
-date: 2020-03-23T07:03:47.149Z
+date: 2017-04-20T07:03:47.149Z
 draft: false
 tags:
   - Testing
@@ -14,17 +14,19 @@ tags:
 
 This project will show you how to make integration tests for your app easily with [Cypress](https://www.cypress.io/).
 
+> This post was written in 2017, code might be old but should be still relevant
+
 ## What we will do?
 We will write some tests for a really simple app, that will show with emojis our current mood depending the day of the week.
 
-> ![01](./assets/demo.gif)
+![01](./assets/demo.gif)
 
 (Tip: If you just want to check the code just navigate or clone this repo, as a disclaimer, it's in spanish)
 
 ## What's up with Cypress?
 Well, is really simple to use and it let me do something that i always tried to do and couldn't (maybe i didn't search a lot), stub the network requests responses. Sometimes we don't have full control of the API so this is really helpful.
 
-> ![02](./assets/stub.png)
+![02](./assets/stub.png)
 
 ## Let's get this party started!
 For this project we will use React, so we will use [Create react app](https://github.com/facebook/create-react-app)
@@ -34,7 +36,7 @@ For this project we will use React, so we will use [Create react app](https://gi
 npx create-react-app mood-of-the-day
 ```
 
-> ![04](./assets/cra-create.png)
+![04](./assets/cra-create.png)
 
 This will install all the necessary dependencies for our project, now open the new folder that was created with your favorite editor. I will use [VSCode](https://code.visualstudio.com/), with my beautiful theme [Styncy](https://marketplace.visualstudio.com/items?itemName=goncy.styncy) (own promotion disclaimer 😛)
 
@@ -47,7 +49,7 @@ npm install cypress --dev
 
 This will install Cypress as a dev dependency, this will take a while because it have to download the Cypress binary, meanwhile, we will continue with the other steps.
 
-> ![07](./assets/install.png)
+![07](./assets/install.png)
 
 ### 💫 Editing our app
 We will edit our app to show a different mood that we will get from an unexisting API, depending which day of the week is. Open `src/App.js` and replace the content with the following code:
@@ -113,7 +115,7 @@ Open `package.json` and in line 15, inside scripts, below the `eject` script, pa
 "test:integration": "cypress open"
 ```
 
-> ![05](./assets/script.png)
+![05](./assets/script.png)
 
 This will let us run Cypress when running `npm run test:integration` (Tip: The script can be named whatever you want)
 
@@ -126,7 +128,7 @@ npm run test:integration
 
 After some seconds a new window will pop up telling us that some default and example files were created.
 
-> ![06](./assets/initial.png)
+![06](./assets/initial.png)
 
 ### 💅Configuring Cypress
 The only thing that we need to configure in Cypress is our base URL, so open `cypress.json` and replace it's content with:
