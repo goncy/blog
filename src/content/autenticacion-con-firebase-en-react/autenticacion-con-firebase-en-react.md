@@ -285,6 +285,6 @@ Si recargamos la página vamos a ver el mensaje "Intentando de restaurar sesión
 Pero esto no termina acá, la autenticación puede ser también via mail, otros proveedores y más. Firebase tambien tiene servicios de bases de datos como Firestore, muy fáciles de usar (mucho mas fácil todavía si ya tenemos Firebase configurado en nuestra aplicación como ahora). Así que a investigar! O a esperar el próximo post 🤪
 
 ## Repositorio
-Si querés ver el proyecto terminado o repasar algo, podés encontrar el repositorio [acá](https://github.com/goncy/blog/tree/master/src/content/autenticacion-con-firebase-en-react/repo)
+Si querés ver el proyecto terminado o repasar algo, podés encontrar el repositorio [acá](https://github.com/goncy/blog/tree/master/src/content/autenticacion-con-firebase-en-react/repository)
 
 > Después de clonarlo renombrá el archivo `.env.template` a `.env` e ingresá tus credenciales de Firebase
