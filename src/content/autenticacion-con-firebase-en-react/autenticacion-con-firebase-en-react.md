@@ -276,5 +276,5 @@ Y luego a nuestra aplicación!
 
 Si recargamos la página vamos a ver el mensaje "Intentando de restaurar sesión..." unos segundos y luego nuestra aplicación, no solo ya tenemos nuestra lógica de autenticación lista sino que también la de hidratación de sesión!
 
-## Felicitaciónes
+## Felicitaciones
 Pero esto no termina acá, la autenticación puede ser también via mail, otros proveedores y más. Firebase tambien tiene servicios de bases de datos como Firestore, muy fáciles de usar (mucho mas fácil todavía si ya tenemos Firebase configurado en nuestra aplicación como ahora). Así que a investigar! O a esperar el próximo post 🤪
