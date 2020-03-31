@@ -60,7 +60,12 @@ npx create-react-app firebase-context-demo
 ![09](./assets/cra.png)
 
 ## Configurando nuestra aplicación
-Una vez que termine vamos a entrar en la carpeta ejecutando `cd firebase-context-demo` y vamos a agregar firebase a nuestro proyecto ejecutando:
+Una vez que termine vamos a entrar en la carpeta ejecutando:
+```bash
+cd firebase-context-demo
+```
+
+Y vamos a agregar Firebase a nuestro proyecto ejecutando:
 
 ```bash
 npm install firebase
