@@ -16,7 +16,7 @@ tags:
 Vamos a aprender como obligar a tus usuarios a autenticarse con Google para poder utilizar tu aplicación, esto lo podemos hacer en una aplicación nueva o existente de manera fácil.
 
 ## Creando nuestro proyecto en Firebase
-Lo primero va a ser crear un proyecto y una aplicación en [Firebase](https://console.firebase.google.com/), para eso nos vamos a dirigir a la [console de Firebase](https://console.firebase.google.com/)
+Lo primero va a ser crear un proyecto y una aplicación en [Firebase](https://console.firebase.google.com/), para eso nos vamos a dirigir a la [consola de Firebase](https://console.firebase.google.com/)
 
 ![01](./assets/console.png)
 
@@ -51,7 +51,7 @@ Nos vamos a copiar el contenido de la variable `firebaseConfig` para dentro de u
 ![08](./assets/config.png)
 
 ## Creando nuestra aplicación React
-Vamos a usar [Create React App](https://create-react-app.dev/) para create una aplicación muy simple. Para eso nos vamos a ir a la terminal, nos vamos a parar en nuestra carpeta de proyectos (o donde quieras crear el proyecto) y vamos a ejecutar:
+Vamos a usar [Create React App](https://create-react-app.dev/) para crear una aplicación muy simple. Para eso nos vamos a ir a la terminal, nos vamos a parar en nuestra carpeta de proyectos (o donde quieras crear el proyecto) y vamos a ejecutar:
 
 ```bash
 npx create-react-app firebase-context-demo
@@ -71,11 +71,16 @@ Y vamos a agregar Firebase a nuestro proyecto ejecutando:
 npm install firebase
 ```
 
-Ahora vamos a crear un archivo `.env` en la raíz de nuestro proyecto y vamos a pegar la configuración de Firebase que sacamos de la variable `firebaseConfig` de más arriba, convirtiendo todas las variables a mayúsculas, con guiones bajos, el prefijo REACT_APP y asegurandose de que no queden comas al final de cada línea.
+Ahora vamos a crear un archivo `.env` en la raíz de nuestro proyecto y vamos a pegar la configuración de Firebase que sacamos de la variable `firebaseConfig` más arriba, convirtiendo todas las variables a mayúsculas, con guiones bajos, el prefijo REACT_APP y asegurandose de que no queden comas al final de cada línea.
 
 ![11](./assets/env.png)
 
-Ahora vamos a correr nuestra aplicación ejecutando `npm start`. Una vez que termine se nos va a abrir un navegador con una aplicación parecida a esta:
+Ahora vamos a correr nuestra aplicación ejecutando:
+```bash
+npm start
+```
+
+Una vez que termine se nos va a abrir un navegador con una aplicación parecida a esta:
 
 ![10](./assets/initial.png)
 
