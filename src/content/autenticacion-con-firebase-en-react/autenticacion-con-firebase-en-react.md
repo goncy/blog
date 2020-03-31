@@ -10,6 +10,7 @@ tags:
   - Firebase
   - React
   - Context
+  - Español
 ---
 
 Vamos a aprender como obligar a tus usuarios a autenticarse con Google para poder utilizar tu aplicación, esto lo podemos hacer en una aplicación nueva o existente de manera fácil.
