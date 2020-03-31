@@ -59,22 +59,22 @@ npx create-react-app firebase-context-demo
 
 ![09](./assets/cra.png)
 
-Una vez que termine vamos a entrar en la carpeta ejecutando `cd firebase-context-demo` y vamos a correr nuestra aplicación ejecutando `npm start`. Una vez que termine se nos va a abrir un navegador con una aplicación parecida a esta:
-
-![10](./assets/initial.png)
-
 ## Configurando nuestra aplicación
-Ahora vamos a crear un archivo `.env` en la raíz de nuestro proyecto y vamos a pegar la configuración de firebase que sacamos de la variable `firebaseConfig`, convirtiendo todas las variables a mayúsculas con guiones bajos y el prefijo REACT_APP.
-
-![11](./assets/env.png)
-
-Ahora vamos a terminar el proceso de la consola y vamos a ejecutar:
+Una vez que termine vamos a entrar en la carpeta ejecutando `cd firebase-context-demo` y vamos a agregar firebase a nuestro proyecto ejecutando:
 
 ```bash
 npm install firebase
 ```
 
-Una vez que termine de instalar volvemos a ejecutar `npm start` y listo, ya estamos listos para ponermos a codear!
+Ahora vamos a crear un archivo `.env` en la raíz de nuestro proyecto y vamos a pegar la configuración de Firebase que sacamos de la variable `firebaseConfig` de más arriba, convirtiendo todas las variables a mayúsculas, con guiones bajos, el prefijo REACT_APP y asegurandose de que no queden comas al final de cada línea.
+
+![11](./assets/env.png)
+
+Ahora vamos a correr nuestra aplicación ejecutando `npm start`. Una vez que termine se nos va a abrir un navegador con una aplicación parecida a esta:
+
+![10](./assets/initial.png)
+
+Listo, ya estamos listos para ponernos a codear!
 
 ## Integrando Firebase
 Vamos a crear un archivo `firebase.js` dentro de `src` con el siguiente contenido:
