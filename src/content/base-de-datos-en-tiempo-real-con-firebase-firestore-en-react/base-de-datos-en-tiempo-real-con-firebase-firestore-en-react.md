@@ -14,7 +14,7 @@ tags:
   - Español
 ---
 
-Vamos a aprender a conectar nuestra aplicación a firestore en tiempo real para obtener información basada en la sesión activa, asegurandonos que nadie pueda acceder a información que no le pertenece.
+Vamos a aprender a conectar nuestra aplicación a la base de datos en tiempo real de Firebase Firestore para obtener información basada en la sesión activa, asegurandonos que nadie pueda acceder a información que no le pertenece.
 
 ## Preparación
 En [este post](/autenticacion-firebase-react-context) aprendimos a agregar autenticación a una aplicación React con Firebase y React Context, también aprendimos a crear un proyecto y una aplicación en Firebase, así que como necesitamos exactamente eso vamos a usarla como base para este post. Si no querés leerlo pero querés ver el código lo tenés [acá](https://github.com/goncy/blog/tree/master/src/content/autenticacion-con-firebase-en-react/repository).
@@ -35,11 +35,13 @@ Repasando un poco la estructura de nuestra aplicación tenemos algo asi:
 ```
 
 ## Agregando Firestore a nuestro proyecto Firebase
-Abrimos la [consola de Firebase](https://console.firebase.google.com/) y clickeamos en "Database" en el panel izquierdo.
+Abrimos la [consola de Firebase](https://console.firebase.google.com/) y clickeamos en "Database" en el panel izquierdo y luego en "Crear base de datos".
 
 ![01](./assets/link.png)
 
-Se nos va a abrir un panel con una serie de pasos, simplemente le damos siguiente a todo. Una vez en la pantalla de "Database" nos dirigimos a la pestaña de "Reglas" y configuramos las siguientes reglas y clickeamos en "Publicar":
+Se nos va a abrir un panel con una serie de pasos, le damos siguiente a todo.
+
+Una vez en la pantalla de "Database" nos dirigimos a la pestaña de "Reglas", configuramos las siguientes reglas y clickeamos en "Publicar":
 
 ![02](./assets/rules.png)
 
@@ -126,7 +128,7 @@ Las collections tienen metodos como `.add` para agregar elementos a esa "carpeta
 
 > Tip: Cada vez que nosotros hacemos .add, .update, .delete, se llama al metodo .onSnapshot, por lo que no es necesario escuchar cada cambio individualmente
 
-El único metodo medio extraño en este archivo es el `onChange`, no te preocupes, es algo que vas a copiar y pegar la mayoría de las veces, no algo que tengas que aprenderte de memoria. Básicamente lo que estamos haciendo es, cada vez que haya un cambio en la "carpeta" todos del usuario en sesión, pasale todos los TODOs (snapshots.docs) a la función `callback` que le pasamos como parametro. Nosotros no nos vamos a guardar una propiedad `id` para cada TODO asi que simplemente extraemos el id del documento de Firstore y se lo agregamos a cada TODO.
+El único metodo medio extraño en este archivo es el `onChange`, no te preocupes, es algo que vas a copiar y pegar la mayoría de las veces, no algo que tengas que aprenderte de memoria. Básicamente lo que estamos haciendo es, cada vez que haya un cambio en la "carpeta" TODOs del usuario en sesión, pasale todos los TODOs (snapshots.docs) a la función `callback` que le pasamos como parametro. Nosotros no nos vamos a guardar una propiedad `id` para cada TODO asi que simplemente extraemos el id del documento de Firstore y se lo agregamos a cada TODO.
 
 En tanto a `context.js` le vamos a dar el siguiente contenido:
 ```jsx
@@ -208,7 +210,7 @@ export function useTodos() {
   ];
 }
 ```
-Ahora usando el hook de `useTodos` vamos a poder acceder al listado de TODOs y dentro de cada TODO vamos a poder llamar a `remove` para borrarlo, eso va a ejecutar el `onChange` que estamos escuchando en nuestro context, actualizando la data sin que nosotros hagamos nada más. También estamos devolviendo como segundo valor en el array una funcion `add` para agregar un nuevo TODO.
+Ahora usando el hook de `useTodos` vamos a poder acceder al listado de TODOs y dentro de cada TODO vamos a poder llamar a `remove` para borrarlo, eso va a ejecutar el `onChange` que estamos escuchando en nuestro context, actualizando la data sin que nosotros hagamos nada más. También estamos devolviendo como segundo valor en el array una función `add` para agregar un nuevo TODO.
 
 > Tip: Firestore refleja el cambio automáticamente en nuestra aplicación, luego intenta sincronizar ese cambio en segundo plano, en caso de que falle va a restaurar el estado original en nuestra aplicación, por lo que no necesitariamos spinners o loadings.
 
