@@ -281,7 +281,7 @@ Y luego a nuestra aplicación!
 Si recargamos la página vamos a ver el mensaje "Intentando de restaurar sesión..." unos segundos y luego nuestra aplicación, no solo ya tenemos nuestra lógica de autenticación lista sino que también la de hidratación de sesión!
 
 ## Código
-Si querés ver el código del proyecto terminado o repasar algo, podés encontrarlo [acá](https://github.com/goncy/blog/tree/master/src/content/autenticacion-con-firebase-en-react/repository)
+Si querés ver el código del proyecto terminado o repasar algo, podés encontrarlo [acá](https://github.com/goncy/blog/tree/master/src/content/autenticacion-con-firebase-en-react/repository).
 
 > Después de clonarlo renombrá el archivo `.env.template` a `.env` e ingresá tus credenciales de Firebase
 
