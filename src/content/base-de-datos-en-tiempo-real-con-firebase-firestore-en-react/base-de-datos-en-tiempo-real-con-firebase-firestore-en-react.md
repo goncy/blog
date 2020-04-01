@@ -292,6 +292,6 @@ De esta manera reemplazamos nuestra aplicación con nuestro formulario de TODOs,
 > Tip: Para comprobar que es en tiempo real agrega / modifica elementos en una nueva pestaña o directamente desde la consola de Firebase
 
 ## Código
-Si querés ver el código del proyecto terminado o repasar algo, podés encontrarlo [acá](https://github.com/goncy/blog/tree/master/src/content/base-de-datos-en-tiempo-real-con-firebase-firestore-en-react/repository).
+Si querés ver el código del proyecto terminado o repasar algo, podés encontrarlo [acá](https://github.com/goncy/blog/tree/master/src/content/base-de-datos-en-tiempo-real-con-firebase-firestore-en-react/repository) o en [este codesandbox](https://codesandbox.io/s/github/goncy/blog/tree/master/src/content/base-de-datos-en-tiempo-real-con-firebase-firestore-en-react/repository).
 
 > Antes de correrlo renombrá el archivo `.env.template` a `.env` e ingresá tus credenciales de Firebase
