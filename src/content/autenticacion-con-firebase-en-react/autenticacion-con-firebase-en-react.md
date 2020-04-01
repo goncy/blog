@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Agregando autenticación a tu aplicación React con Firebase y Context
+title: Agregando autenticación a tu aplicación React con Firebase y React Context
 image: assets/cover.png
 author: goncy
 permalink: autenticacion-firebase-react-context
@@ -8,6 +8,7 @@ date: 2020-03-31T07:03:47.149Z
 draft: false
 tags:
   - Firebase
+  - Authentication
   - React
   - Context
   - Español
@@ -24,7 +25,7 @@ Vamos a clickear en "Nuevo proyecto" y completamos los datos necesarios.
 
 ![02](./assets/project.png)
 
-Una vez creado clickeamos en "Autenticación" en el panel izquierdo.
+Una vez creado clickeamos en "Authentication" en el panel izquierdo.
 
 ![03](./assets/auth.png)
 
@@ -86,7 +87,7 @@ Una vez que termine se nos va a abrir un navegador con una aplicación parecida 
 
 Listo, ya estamos listos para ponernos a codear!
 
-## Integrando Firebase
+## Integrando Firebase Authentication
 Vamos a crear un archivo `firebase.js` dentro de `src` con el siguiente contenido:
 
 ```js
@@ -132,21 +133,6 @@ export default {
 
 Vamos a tener un metodo para iniciar sesión, uno para cerrar sesión y un para escuchar cada vez que haya un cambio en la sesión.
 
-A nuestro `screens/Login.js` le vamos a dar el siguiente contenido:
-```jsx
-import React from "react";
-
-const LoginScreen = ({ signIn, status }) => (
-  <div>
-    {status === "init" && <span>Intentando de restaurar sesión...</span>}
-    {status === "restored" && <button onClick={signIn}>Iniciar sesión con Google</button>}
-  </div>
-);
-
-export default LoginScreen;
-```
-El componente va a recibir una prop `signIn` que se va a ejecutar cuando se clickee en "Iniciar sesión con Google" y va a mostrar diferentes mensajes dependiendo del valor de una prop `status`.
-
 En tanto a `context.js` le vamos a dar el siguiente contenido:
 ```jsx
 import React from "react";
@@ -179,10 +165,23 @@ const SessionProvider = ({ children }) => {
 export { SessionProvider as Provider, SessionContext as default };
 ```
 
-Vamos a crear un componente que no solo, usando context, va a proveer de la información de sesión a toda la aplicación, sino que va a bloquear el renderizado en caso de que no haya una sesión activa.
-También escuchamos dentro del `useEffect` todos los cambios de sesión que haya en Firebase para asegurarnos de que siempre tengamos la sesión actualizada.
+Vamos a crear un componente que no solo, usando context, va a proveer de la información de sesión a toda la aplicación, sino que escuchamos dentro del `useEffect` todos los cambios de sesión que haya en Firebase para asegurarnos de que siempre tengamos la sesión actualizada.
+Para bloquear el renderizado vamos a retornar nuestro componente de `screens/Login.js` en caso de no haber una sesión activa.
 
-> Notese que se usa el componente Login y se le pasan las 2 props necesarias
+A nuestro `screens/Login.js` le vamos a dar el siguiente contenido:
+```jsx
+import React from "react";
+
+const LoginScreen = ({ signIn, status }) => (
+  <div>
+    {status === "init" && <span>Intentando de restaurar sesión...</span>}
+    {status === "restored" && <button onClick={signIn}>Iniciar sesión con Google</button>}
+  </div>
+);
+
+export default LoginScreen;
+```
+El componente va a recibir una prop `signIn` que se va a ejecutar cuando se clickee en "Iniciar sesión con Google" y va a mostrar diferentes mensajes dependiendo del valor de la prop `status`.
 
 Por último vamos a darle el siguiente contenido a `hooks.js`:
 
