@@ -31,7 +31,7 @@ Repasando un poco la estructura de nuestra aplicación tenemos algo asi:
         ├── context.js # Provider de React Context encargado de bloquear el renderizado de nuestra aplicación si el usuario no inició sesión
         ├── hooks.js # Hooks para obtener información de la sesión
         └── screens/ # Pantallas relativas a la sesión
-          └── LoginScreen.js # Pantalla de inicio de sesión
+          └── Login.js # Pantalla de inicio de sesión
 ```
 
 ## Agregando Firestore a nuestro proyecto Firebase
