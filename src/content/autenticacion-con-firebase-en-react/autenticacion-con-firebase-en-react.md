@@ -76,6 +76,8 @@ Ahora vamos a crear un archivo `.env` en la raíz de nuestro proyecto y vamos a 
 
 ![11](./assets/env.png)
 
+> Los archivos .env (environment / ambiente) guardan información sensible de nuestra aplicación como claves, no se suben al repositorio publico y pueden ser accedidas desde la app bajo el prefijo `process.env` por ejemplo: usando `process.env.REACT_APP_API_KEY` en nuestro `firebase.js` mas adelante nos va a permitir acceder a nuestra api key de Firebase sin exponerla al público.
+
 Ahora vamos a correr nuestra aplicación ejecutando:
 ```bash
 npm start
@@ -199,7 +201,9 @@ export function useUser() {
 }
 ```
 
-Este hook nos va a permitir acceder a la información de sesión de una manera muy simple.
+En este caso usamos nuestro `SessionContext` pasandoselo al hook de `useContext` que nos provee React, de el, extraemos el `user` que exponemos en nuestro `state` y lo retornamos. Este hook nos va a permitir acceder a la información de sesión de una manera muy simple desde nuestros componentes.
+
+> Nuestro SessionProvider expone dos valores, `state` que contiene al usuario y `actions` que son funciónes que interactuan con la sesión (iniciar / cerrar sesión)
 
 Nos vamos a dirigir a nuestro `index.js` y vamos a envolver nuestro componente `App` con nuestro `SessionProvider`:
 
