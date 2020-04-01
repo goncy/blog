@@ -292,4 +292,4 @@ De esta manera reemplazamos nuestra aplicación con nuestro formulario de TODOs,
 ## Código
 Si querés ver el código del proyecto terminado o repasar algo, podés encontrarlo [acá](https://github.com/goncy/blog/tree/master/src/content/base-de-datos-en-tiempo-real-con-firebase-firestore-en-react/repository).
 
-> Después de clonarlo renombrá el archivo `.env.template` a `.env` e ingresá tus credenciales de Firebase
+> Antes de correrlorenombrá el archivo `.env.template` a `.env` e ingresá tus credenciales de Firebase
