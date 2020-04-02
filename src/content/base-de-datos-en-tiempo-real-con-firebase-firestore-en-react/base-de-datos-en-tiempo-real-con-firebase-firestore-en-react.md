@@ -167,7 +167,7 @@ const TodoProvider = ({ children }) => {
   if (status === "pending") return <Loading />;
 
   const state = { todos };
-  const actions = { add, update, remove };
+  const actions = { add, remove };
 
   return <TodoContext.Provider value={{ state, actions }}>{children}</TodoContext.Provider>;
 };
@@ -271,7 +271,7 @@ ReactDOM.render(
     <SessionProvider>
       <TodoProvider>
         <Todos />
-      <TodoProvider>
+      </TodoProvider>
     </SessionProvider>
   </React.StrictMode>,
   document.getElementById('root')
