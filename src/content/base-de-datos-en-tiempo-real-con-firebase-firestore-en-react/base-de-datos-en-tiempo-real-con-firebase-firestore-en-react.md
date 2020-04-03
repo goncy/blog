@@ -48,8 +48,8 @@ Una vez en la pantalla de "Database" nos dirigimos a la pestaña de "Reglas", co
 ```
 rules_version = '2';
 service cloud.firestore {
-  match /users/{userId}/{document=**} {
-    match /databases/{database}/documents {
+  match /databases/{database}/documents {
+  	match /users/{userId}/{document=**} {
       allow read, write: if request.auth.uid == userId;
     }
   }
