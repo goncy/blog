@@ -292,4 +292,4 @@ Si querés ver el código del proyecto terminado o repasar algo, podés encontra
 ## Felicitaciones
 Pero esto no termina acá, la autenticación puede ser también via mail, otros proveedores y más. Firebase tambien tiene servicios de bases de datos como Firestore, muy fáciles de usar (mucho mas fácil todavía si ya tenemos Firebase configurado en nuestra aplicación como ahora).
 
-Si querés saber como darle a cada usuario autenticado una base de datos en tiempo real a la cual solo el va a tener acceso, podés ver [este post](/base-de-datos-en-tiempo-real-con-firebase-firestore-en-react).
+Si querés saber como darle a cada usuario autenticado una base de datos en tiempo real a la cual solo el va a tener acceso, podés ver [este post](/base-de-datos-tiempo-real-firebase-firestore-react-context).
