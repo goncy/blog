@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "https://blog.goncy.now.sh/:splat"
+  status = 301
+  force = false
