@@ -15,8 +15,6 @@ tags:
 
 Perdí todo un día intentando de hacer esto así que me pareció prudente volcarlo en un post para que a menos gente le pase.
 
-> Este post lo escribí en 2017, el código es viejo pero debería seguir siendo relevante
-
 ## Qué vamos a necesitar?
 * Una [cuenta en Vercel](https://vercel.com/signup)
 * La [CLI de Vercel](https://vercel.com/download)
