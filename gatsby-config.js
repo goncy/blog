@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: "https://gatsby-casper.netlify.com",
+        siteUrl: "https://goncy.netlify.com",
       },
     },
     "gatsby-plugin-emotion",
