@@ -4,7 +4,7 @@ title: Deployando una aplicación node con express en Vercel
 image: assets/banner.png
 author: goncy
 permalink: vercel-node-express
-date: 2017-04-20T07:03:47.149Z
+date: 2020-06-08T07:03:47.149Z
 draft: false
 tags:
   - Vercel
