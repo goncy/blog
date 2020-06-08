@@ -74,16 +74,16 @@ En nuestro `vercel.json` le indicamos que cualquier ruta llamada a `/api` debe s
 
 Y en nuestro `api/index.js` levantamos un server de express con 2 rutas, `/api` que nos va a devolver un JSON con `{"hello": "dog"}` y `/api/marco` que nos va a devolver `polo`.
 
-> Si tuvieramos nuestro archivo fuera de la carpeta `api` deberíamos indicar el rewrite en el archivo `vercel.json` así:
+> Si tuvieramos nuestro archivo fuera de la carpeta `api` (en el root por ejemplo) deberíamos indicar el rewrite en el archivo `vercel.json` así:
 ```json
 {
   "functions": {
-    "api/index.js": {
+    "index.js": {
       "runtime": "@now/node@1.6.1"
     }
   },
   "rewrites": [{
-    "source": "/api/(.*)", "destination": "/api/index.js"
+    "source": "/api/(.*)", "destination": "index.js"
   }]
 }
 ```
