@@ -1,3 +1,7 @@
 [[redirects]]
   from = "/*"
   to = "https://blog.goncy.now.sh/:splat"
+  status = 200
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
