@@ -74,21 +74,6 @@ En nuestro `vercel.json` le indicamos que cualquier ruta llamada a `/api` debe s
 
 Y en nuestro `api/index.js` levantamos un server de express con 2 rutas, `/api` que nos va a devolver un JSON con `{"hello": "dog"}` y `/api/marco` que nos va a devolver `polo`.
 
-> Si tuvieramos nuestro archivo fuera de la carpeta `api` (en el root por ejemplo) deberíamos indicar el rewrite en el archivo `vercel.json` así:
-```json
-{
-  "functions": {
-    "index.js": {
-      "runtime": "@now/node@1.6.1"
-    }
-  },
-  "rewrites": [{
-    "source": "/api/(.*)", "destination": "index.js"
-  }]
-}
-```
-> En este caso no tenemos que hacerlo por que todo lo que esté dentro de la carpeta `api` se identifica como una function.
-
 Muy bien, vamos a la terminal devuelta y corremos `vercel dev`.
 
 ![04](./assets/dev.png)
@@ -103,5 +88,26 @@ Bien! Ya tenemos nuestra aplicación andando.
 En la terminal, terminamos el proceso de `vercel dev` usando ctrl + c y ejecutamos `vercel`
 
 Listo 💪
+
+## FAQ
+* Q: Si pongo mi `index.js` fuera de la carpeta `api` no funciona.
+* A: Vercel recomienda usar [Serverless functions](https://vercel.com/docs/v2/serverless-functions/introduction) en vez de levantar nuestro propio server, esto es solo para los casos edge en los que necesitamos un server custom.
+En caso de querer moverlo fuera de la carpeta `api` tendríamos que mapear la función en el `vercel.json` así:
+```json
+{
+  "functions": {
+    "index.js": {
+      "runtime": "@now/node@1.6.1"
+    }
+  },
+  "rewrites": [{
+    "source": "/api/(.*)", "destination": "index.js"
+  }]
+}
+```
+
+
+* Q: Puedo usar otro server o directamente el file system?
+* A: Si! Podémos levantar cualquier cosa que queramos que corra en node (u otro runtime soportado por Vercel)
 
 > Gracias a [@okbel](https://twitter.com/okbel) por las recomendaciones y a [@DamianCatanzaro](https://twitter.com/DamianCatanzaro) por el pie 🙌
