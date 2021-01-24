@@ -173,6 +173,8 @@ Y también nuestro if para deshabilitar el botón:
 ## Listo ✨
 Felicitaciones, ya agregaste, usaste y aprendiste algunas cosas de TypeScript, en un tiempo ya no va a haber vuelta atrás y lo vas a amar.
 
+Si querés podés ver el código de la aplicación migrada [acá](https://codesandbox.io/s/migrate-to-typescript-completed-tzqes?file=/src/App.tsx).
+
 ---
 
 Si te gustan estos posts, no te olvides de seguirme en:
