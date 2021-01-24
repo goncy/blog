@@ -49,7 +49,7 @@ Un pequeño disclaimer con esto es que depende como configuremos TypeScript (el 
 Empecemos definiendo que cosas de TypeScript vamos a usar y que són.
 
 ### Interfaces
-Es una estructura que propiedades y sus tipos de datos, estas propiedades pueden ser desde primitivos, como numeros o texto, hasta funciones, otras interfaces y tipos mas complejos. Por ejemplo:
+Es una estructura que define propiedades y sus tipos de datos, estas propiedades pueden ser desde primitivos, como numeros o texto, hasta funciones, otras interfaces y tipos mas complejos. Por ejemplo:
 
 ```ts
 interface Joke {
