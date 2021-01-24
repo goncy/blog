@@ -92,7 +92,7 @@ export interface Joke {
   value: string;
 }
 ```
-> Notese el `export` adelante, que nos permite exportar para importar en los archivos que necesitemos.
+> Notese el `export` adelante, que nos permite exportar los tipos para importar en los archivos que necesitemos.
 
 ### api.ts
 Vamos a empezar por `api.ts`, que actualmente se ve así:
