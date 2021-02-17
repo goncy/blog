@@ -34,8 +34,8 @@ yarn add plop --dev
 Y creamos un archivo `plopfile.js` en la raíz de nuestro proyecto con el siguiente contenido:
 ```js
 module.exports = function (plop) {
-    plop.setGenerator('basics', {
-        description: 'este es un generador básico',
+    plop.setGenerator('component', {
+        description: 'crea un componente de React',
         prompts: [],
         actions: []
     });
@@ -67,7 +67,7 @@ module.exports = function (plop) {
         prompts: [{
             type: 'input',
             name: 'name',
-            message: 'nombre del controlador'
+            message: 'nombre del componente'
         }],
         actions: [{
             type: 'add',
