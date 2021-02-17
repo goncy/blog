@@ -123,9 +123,9 @@ npx plop component --name List
 ```
 
 ## Listo ✨
-Felicitaciones, ya agregaste, usaste y aprendiste algunas cosas de TypeScript, en un tiempo ya no va a haber vuelta atrás y lo vas a amar.
+Felicitaciones, ya agregaste, usaste y aprendiste algunas cosas de Plop.
 
-Si querés podés ver el código de la aplicación migrada [acá](https://codesandbox.io/s/migrate-to-typescript-completed-tzqes?file=/src/App.tsx).
+Si querés, podés ver más de plop [acá](https://plopjs.com/).
 
 ---
 
