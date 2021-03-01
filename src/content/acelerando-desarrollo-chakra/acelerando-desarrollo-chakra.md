@@ -36,6 +36,11 @@ const ContactForm = () => (
 El botón es un componente separado del formulario pero en la UI no hay espacio entre ambos, basado en la librería que implementemos la solución sería algo así:
 
 #### CSS o similares
+```css
+.submit {
+  margin-top: 12px;
+}
+```
 ```jsx
 import './styles.css';
 
@@ -48,6 +53,11 @@ const ContactForm = () => (
 ```
 
 #### CSS / SCSS modules
+```css
+.submit {
+  margin-top: 12px;
+}
+```
 ```jsx
 import styles from './styles.css';
 
@@ -70,7 +80,7 @@ const StyledButton = styled(Button)`
 const ContactForm = () => (
   <Form>
     <Fields />
-    <Button className={styles.submit} type="submit">Submit</Button>
+    <StyledButton type="submit">Submit</StyledButton>
   </Form>
 );
 ```
