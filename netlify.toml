@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/*"
-  to = "https://blog.goncy.now.sh/:splat"
+  to = "https://blog.gonzalopozzo.com/:splat"
   status = 200
   force = true
   [redirects.headers]
