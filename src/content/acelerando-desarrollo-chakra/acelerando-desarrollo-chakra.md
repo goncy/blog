@@ -8,6 +8,7 @@ date: 2021-03-01T07:03:47.149Z
 draft: false
 tags:
   - React
+  - ChakraUI
   - UI
   - Español
 ---
