@@ -4,7 +4,7 @@ title: Modificando componentes sin modificar componentes en Chakra UI
 image: assets/banner.jpg
 author: goncy
 permalink: modificando-componentes-chakra-theme
-date: 2021-03-01T07:03:47.149Z
+date: 2021-04-23T07:03:47.149Z
 draft: false
 tags:
   - React
