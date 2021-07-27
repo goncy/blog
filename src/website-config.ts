@@ -27,6 +27,10 @@ export interface WebsiteConfig {
   /**
    * full url, no username
    */
+  youtube?: string;
+  /**
+   * full url, no username
+   */
   twitch?: string;
   /**
    * full url, no username
@@ -70,6 +74,7 @@ const config: WebsiteConfig = {
   twitter: "https://twitter.com/goncy",
   github: "https://github.com/goncy",
   twitch: "https://www.twitch.tv/goncypozzo",
+  youtube: "https://www.youtube.com/channel/UCCvaRcYdZCZBrBQVnsUBg5Q",
   linkedin: "https://www.linkedin.com/in/gonzalopozzo/",
   showSubscribe: false,
 };

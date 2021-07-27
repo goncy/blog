@@ -1,19 +1,20 @@
-import {Link} from "gatsby";
-import * as React from "react";
-import styled from "@emotion/styled";
-import {css} from "@emotion/core";
-
 import {SocialLink} from "../../styles/shared";
 import config from "../../website-config";
 import Facebook from "../icons/facebook";
 import Twitter from "../icons/twitter";
 import Github from "../icons/github";
 import Twitch from "../icons/twitch";
+import YouTube from "../icons/youtube";
 import Linkedin from "../icons/linkedin";
 import SubscribeModal from "../subscribe/SubscribeOverlay";
 import {outer, inner, SiteHeader} from "../../styles/shared";
 
 import SiteNavLogo from "./SiteNavLogo";
+
+import {css} from "@emotion/core";
+import styled from "@emotion/styled";
+import * as React from "react";
+import {Link} from "gatsby";
 
 const HomeNavRaise = css`
   @media (min-width: 900px) {
@@ -169,6 +170,11 @@ class SiteNav extends React.Component<SiteNavProps> {
                 {config.twitch && (
                   <a css={SocialLink} href={config.twitch} rel="noopener noreferrer" target="_blank" title="Twitch">
                     <Twitch />
+                  </a>
+                )}
+                {config.youtube && (
+                  <a css={SocialLink} href={config.youtube} rel="noopener noreferrer" target="_blank" title="YouTube">
+                    <YouTube />
                   </a>
                 )}
                 {config.linkedin && (

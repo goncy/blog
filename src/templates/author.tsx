@@ -1,7 +1,3 @@
-import {graphql} from "gatsby";
-import React from "react";
-import Helmet from "react-helmet";
-
 import Footer from "../components/Footer";
 import PostCard from "../components/PostCard";
 import Wrapper from "../components/Wrapper";
@@ -12,6 +8,10 @@ import AuthorHeader from "../components/header/AuthorHeader";
 import SiteNav from "../components/header/SiteNav";
 
 import {PageContext} from "./post";
+
+import Helmet from "react-helmet";
+import React from "react";
+import {graphql} from "gatsby";
 
 interface AuthorTemplateProps {
   pathContext: {
@@ -39,6 +39,7 @@ interface AuthorTemplateProps {
       facebook?: string;
       github?: string;
       twitch?: string;
+      youtube?: string;
       linkedin?: string;
       location?: string;
       profile_image?: {
@@ -115,6 +116,7 @@ export const pageQuery = graphql`
       bio
       github
       twitch
+      youtube
       linkedin
       location
       profile_image {

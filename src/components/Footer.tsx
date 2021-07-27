@@ -1,12 +1,12 @@
+import {colors} from "../styles/colors";
+import {outer, inner} from "../styles/shared";
+import config from "../website-config";
+
 import {Link} from "gatsby";
 import {setLightness} from "polished";
 import * as React from "react";
 import styled from "@emotion/styled";
 import {css} from "@emotion/core";
-
-import {colors} from "../styles/colors";
-import {outer, inner} from "../styles/shared";
-import config from "../website-config";
 
 const SiteFooter = css`
   position: relative;
@@ -96,6 +96,11 @@ const Footer: React.FC = () => {
           {config.twitch && (
             <a href={config.twitch} rel="noopener noreferrer" target="_blank">
               Twitch
+            </a>
+          )}
+          {config.youtube && (
+            <a href={config.youtube} rel="noopener noreferrer" target="_blank">
+              Youtube
             </a>
           )}
           {config.linkedin && (

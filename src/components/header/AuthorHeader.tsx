@@ -1,7 +1,3 @@
-import React from "react";
-import styled from "@emotion/styled";
-import {css} from "@emotion/core";
-
 import {
   AuthorProfileImage,
   inner,
@@ -14,10 +10,15 @@ import {
 } from "../../styles/shared";
 import Github from "../icons/github";
 import Twitch from "../icons/twitch";
+import YouTube from "../icons/youtube";
 import Linkedin from "../icons/linkedin";
 import Facebook from "../icons/facebook";
 import Website from "../icons/website";
 import Twitter from "../icons/twitter";
+
+import {css} from "@emotion/core";
+import styled from "@emotion/styled";
+import React from "react";
 
 const HiddenMobile = css`
   @media (max-width: 500px) {
@@ -72,6 +73,7 @@ interface AuthorHeaderProps {
     facebook?: string;
     github?: string;
     twitch?: string;
+    youtube?: string;
     linkedin?: string;
     location?: string;
     profile_image?: {
@@ -173,6 +175,18 @@ const AuthorHeader: React.FC<AuthorHeaderProps> = ({author}) => {
                 title="Twitch"
               >
                 <Twitch />
+              </a>
+            )}
+            {author.youtube && (
+              <a
+                className="social-link-youtube"
+                css={SocialLink}
+                href={`https://www.youtube.com/channel/${author.youtube}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                title="YouTube"
+              >
+                <YouTube />
               </a>
             )}
             {author.linkedin && (
