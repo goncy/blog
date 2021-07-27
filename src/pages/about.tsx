@@ -1,7 +1,3 @@
-import * as React from "react";
-import {css} from "@emotion/core";
-import Helmet from "react-helmet";
-
 import IndexLayout from "../layouts";
 import Wrapper from "../components/Wrapper";
 import SiteNav from "../components/header/SiteNav";
@@ -9,6 +5,10 @@ import {outer, SiteMain} from "../styles/shared";
 import {PostFullHeader, PostFullTitle, NoImage, PostFull} from "../templates/post";
 import {PostFullContent} from "../components/PostContent";
 import Footer from "../components/Footer";
+
+import Helmet from "react-helmet";
+import {css} from "@emotion/core";
+import * as React from "react";
 
 const PageTemplate = css`
   .site-main {
@@ -34,8 +34,8 @@ const About: React.FC = () => (
             <div className="post-content">
               <p>
                 I'm a frontend developer{" "}
-                <a href="https://tradehelm.com/" rel="noopener noreferrer">
-                  @Tradehelm
+                <a href="https://vercel.com/" rel="noopener noreferrer">
+                  @Vercel
                 </a>{" "}
                 working with the React - Redux stack,{" "}
                 <a href="https://www.cypress.io/" rel="noopener noreferrer">
