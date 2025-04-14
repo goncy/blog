@@ -109,6 +109,7 @@ const Footer: React.FC = () => {
             </a>
           )}
           <a href="/rss.xml">RSS</a>
+          <a href="https://github.com/goncy/blog/blob/master/LICENSE">License</a>
         </SiteFooterNav>
       </div>
     </footer>
