@@ -13,7 +13,7 @@ tags:
   - Español
 ---
 
-Recuerdo que cuando quise empezar a usar TypeScript, todos los recursos que encontraba eran super crípticos, con tipos e interfaces super complejos y terminaba cerrando todo por que me mareaba mas de lo que me ayudaba. Si ese es tu caso, en este post vamos a ver como migrar una aplicación muy simple, que se trae chistes de Chuck Norris de una [api](https://api.chucknorris.io/), de JavaScript a TypeScript, usando [create-react-app](https://create-react-app.dev/) en [CodeSandbox](https://codesandbox.io/).
+Recuerdo que cuando quise empezar a usar TypeScript, todos los recursos que encontraba eran súper crípticos, con tipos e interfaces súper complejos y terminaba cerrando todo por que me mareaba mas de lo que me ayudaba. Si ese es tu caso, en este post vamos a ver cómo migrar una aplicación muy simple, que se trae chistes de Chuck Norris de una [api](https://api.chucknorris.io/), de JavaScript a TypeScript, usando [create-react-app](https://create-react-app.dev/) en [CodeSandbox](https://codesandbox.io/).
 
 ## Explicame que es TypeScript como si fuera junior
 Es un lenguaje, tipado (nos permite definir tipos de datos a las cosas), que compila a JavaScript.
@@ -30,26 +30,26 @@ Vamos a ir a [este link](https://codesandbox.io/s/migrate-to-typescript-initial-
 
 > Para para para, no ibamos a aprender a migrar de JavaScript a TypeScript?
 
-Bueno, si. Si entran al link van a ver dos cosas. La primera es como crear un proyecto de create-react-app con TypeScript y la otra es como agregar TypeScript a un proyecto de create-react-app.
+Bueno, sí. Si entran al link van a ver dos cosas. La primera es cómo crear un proyecto de create-react-app con TypeScript y la otra es como agregar TypeScript a un proyecto de create-react-app.
 
-Generalmente agregar TypeScript a tu proyecto va a depende de que stack o tool estes usando (NextJS, create-react-app, config custom), pero hoy en día hay bastante información sobre como hacerlo, hoy nos vamos a centrar en create-react-app.
+Generalmente agregar TypeScript a tu proyecto va a depender de que stack o tool estés usando (NextJS, create-react-app, config custom), pero hoy en día hay bastante información sobre cómo hacerlo, hoy nos vamos a centrar en create-react-app.
 
 > Para para para, en el proyecto inicial, todos los archivos son .ts o .tsx...
 
-Si, para poder usar TypeScript en nuestro proyecto, los archivos `.js` se deben renombrar a `.ts` o `.tsx`, dependiendo si incluyen código `JSX` o no. Al usar el template de TypeScript de create-react-app, los archivos creados por defecto tienen la extensión necesaria.
+Sí, para poder usar TypeScript en nuestro proyecto, los archivos `.js` se deben renombrar a `.ts` o `.tsx`, dependiendo si incluyen código `JSX` o no. Al usar el template de TypeScript de create-react-app, los archivos creados por defecto tienen la extensión necesaria.
 
-Pero atentis! Si bien los archivos creados tienen extensión de TypeScript, podemos ver que el código no tiene ningún tipo definido. Es más, podriamos crear un proyecto con create-react-app sin TypeScript, copiar este código y funcionaría igual.
+Pero atentis! Si bien los archivos creados tienen extensión de TypeScript, podemos ver que el código no tiene ningún tipo definido. Es más, podríamos crear un proyecto con create-react-app sin TypeScript, copiar este código y funcionaría igual.
 
-* Q - Podémos escribir JavaScript plano en una aplicación TypeScript sin ningún tipo e ir agregandolos de a poco?
-* A - Si.
+* Q - Podémos escribir JavaScript plano en una aplicación TypeScript sin ningún tipo e ir agregándolos de a poco?
+* A - Sí.
 
-Un pequeño disclaimer con esto es que depende como configuremos TypeScript (el archivo `tsconfig.json`), si no definimos tipos a todo, nuestra aplicación _no compila_. Obviamente no es el caso para nuestro ejemplo y tampoco vamos a cubrir como configurar el `tsconfig.json`, ya que no me se todas las propiedades y cuando necesito algo solo lo Googleo 🤷‍♂️.
+Un pequeño disclaimer con esto es que depende como configuremos TypeScript (el archivo `tsconfig.json`), si no definimos tipos a todo, nuestra aplicación _no compila_. Obviamente no es el caso para nuestro ejemplo y tampoco vamos a cubrir como configurar el `tsconfig.json`, ya que no me sé todas las propiedades y cuando necesito algo solo lo Googleo 🤷‍♂️.
 
 ## Agarremos la pala
-Empecemos definiendo que cosas de TypeScript vamos a usar y que són.
+Empecemos definiendo que cosas de TypeScript vamos a usar y qué son.
 
 ### Interfaces
-Es una estructura que define propiedades y sus tipos de datos, estas propiedades pueden ser desde primitivos, como numeros o texto, hasta funciones, otras interfaces y tipos mas complejos. Por ejemplo:
+Es una estructura que define propiedades y sus tipos de datos, estas propiedades pueden ser desde primitivos, como números o texto, hasta funciones, otras interfaces y tipos más complejos. Por ejemplo:
 
 ```ts
 interface Joke {
@@ -118,14 +118,14 @@ export default {
     fetch(`https://api.chucknorris.io/jokes/random`).then((res) => res.json())
 };
 ```
-> El valor de retorno se define antes del cuerpo de la función, después de los parentesis que contiene a los parametros.
+> El valor de retorno se define antes del cuerpo de la función, después de los paréntesis que contiene a los parámetros.
 
-De esta manera TypeScript ya sabe que tipo de dato va a devolver nuestra función, si vamos a nuestro `App.tsx` y hacemos hover sobre el parametro `joke` de linea 16, vamos a ver que TypeScript ya esta identificando el valor correcto.
+De esta manera TypeScript ya sabe que tipo de dato va a devolver nuestra función, si vamos a nuestro `App.tsx` y hacemos hover sobre el parámetro `joke` de linea 16, vamos a ver que TypeScript ya esta identificando el valor correcto.
 
 ![01](./assets/correct-type.png)
 
 ### App.tsx
-Ahora vamos a tipar nuestro `App.tsx`, podémos ver que el editor ya nos marca algunos errores:
+Ahora vamos a tipar nuestro `App.tsx`, podemos ver que el editor ya nos marca algunos errores:
 
 ![02](./assets/warnings.png)
 
@@ -141,12 +141,12 @@ const [jokes, setJokes] = React.useState<Joke[]>([]);
 
 Magia! Todos los errores desaparecieron, no solo eso, si hacemos hover sobre la variable `joke` o `jokes` en cualquier parte, podemos ver que propiedades contiene y además tenemos autocomplete e intellisense cada vez que las queramos usar.
 
-Si bien ya solucionamos todos los errores y conseguimos unas cuantas ventajas, vamos a tipar nuestro `status` para ver como usar un `enum`.
+Si bien ya solucionamos todos los errores y conseguimos unas cuantas ventajas, vamos a tipar nuestro `status` para ver cómo usar un `enum`.
 ```ts
 const [status, setStatus] = React.useState<Status>(Status.Init);
 ```
 
-En este caso le decimos a `status` que es de tipo `Status`, por ende, solamente vamos a poder hacer un `setStatus` con alguna de las variantes disponibles en el enum `Status`, cualquier otro valor, aunque sea de tipo string, nos va a dar un error. No solo eso, aunque el valor del string que le queramos dar sea el mismo que el que esta definido en el enum, va a fallar igual. Vamos a actualizar nuestros llamados a `setStatus`.
+En este caso le decimos a `status` que es de tipo `Status`, por ende, solamente vamos a poder hacer un `setStatus` con alguna de las variantes disponibles en el enum `Status`, cualquier otro valor, aunque sea de tipo string, nos va a dar un error. No solo eso, aunque el valor del string que le queramos dar sea el mismo que el que está definido en el enum, va a fallar igual. Vamos a actualizar nuestros llamados a `setStatus`.
 
 ```ts
 function getJoke() {
